@@ -1,0 +1,43 @@
+[
+  {
+    "id": "gameofthrones",
+    "img": "/img/quartermaester.png",
+    "title": "Game of Thrones Map with Spoiler Control",
+    "tags": ["maps", "web"],
+    "featured": false,
+    "github": "",
+    "demo": "https://quartermaester.info/"
+  },
+  {
+    "id": "masters",
+    "img": "/img/lrctools.png",
+    "title": "Masters' Swimming Admin Tools",
+    "tags": ["data", "activities"],
+    "github": "",
+    "demo": ""
+  },
+  {
+    "id": "taxiapp",
+    "img": "/img/hk_taxi_stands.png",
+    "title": "Hong Kong Taxi Stands Mobile App",
+    "tags": ["maps", "hybrid apps"],
+    "github": "",
+    "demo": "https://play.google.com/store/apps/details?id=us.rslc.hk_taxi_stands"
+  },
+  {
+    "id": "sohobusmap",
+    "img": "/img/sohobusmap.png",
+    "title": "SoHo Bus Routes Diagram",
+    "tags": ["maps", "Hong Kong"],
+    "github": "",
+    "demo": ""
+  },
+  {
+    "id": "timescaledmap",
+    "img": "/img/timescaledmap.png",
+    "title": "Time-Scaled MTR Maps",
+    "tags": ["maps", "Hong Kong"],
+    "github": "",
+    "demo": ""
+  }
+]

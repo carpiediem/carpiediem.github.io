@@ -1,0 +1,41 @@
+[
+  {
+    "years": "2005 - 2007",
+    "school": "Stanford University",
+    "url": "https://aa.stanford.edu/",
+    "degree": "M.S. Aeronautics & Astronautics"
+  },
+  {
+    "years": "2000 - 2004",
+    "school": "Harvey Mudd College",
+    "url": "https://www.hmc.edu/",
+    "degree": "B.S. Engineering",
+    "side": "right",
+    "offset": -50
+  },
+  {
+    "years": "2020",
+    "school": "pwc Scale Legaltech Program",
+    "url": "https://www.pwc.co.uk/ux23/products-and-services/pwc-scale-up-programmes/pwc-scale-law-tech1.html",
+    "degree": "Startup Accelerator",
+    "color": "secondary",
+    "offset": -90
+  },
+  {
+    "years": "2019",
+    "school": "StartupBootCamp",
+    "url": "https://www.startupbootcamp.org/accelerator/fintech-melbourne/",
+    "degree": "Startup Accelerator",
+    "side": "right",
+    "color": "secondary",
+    "offset": -140
+  },
+  {
+    "years": "2005 - 2008",
+    "school": "Lockheed Martin Engineering Dev. Program",
+    "url": "https://www.lockheedmartinjobs.com/leadership-development",
+    "degree": "Corporate Leadership Program",
+    "color": "secondary",
+    "offset": -190
+  }
+]
