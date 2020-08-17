@@ -1,3 +1,5 @@
+/* global ga */
+
 import React, { forwardRef } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -11,7 +13,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
@@ -45,7 +47,18 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     position: 'absolute',
     top: 0,
+    zIndex: -2,
+  },
+  fadeToWhite: {
+    minHeight: 515,
+    width: '100%',
+    position: 'absolute',
+    top: 0,
     zIndex: -1,
+    background: 'rgb(255,255,255)',
+    // eslint-disable-next-line no-dupe-keys
+    background:
+      'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%)',
   },
   card: {
     margin: '100px auto 0 auto',
@@ -107,6 +120,11 @@ const useStyles = makeStyles((theme) => ({
 export default forwardRef((props, ref) => {
   const classes = useStyles();
 
+  const triggerDownloadEvent = () =>
+    ga('send', 'event', 'File', 'Download', 'Resume');
+  const triggerEmailEvent = () =>
+    ga('send', 'event', 'Link', 'Click', 'Email Address');
+
   return (
     <React.Fragment>
       <section ref={ref} className={classes.root} data-testid="About">
@@ -146,7 +164,10 @@ export default forwardRef((props, ref) => {
                     <ListItemText
                       primary="Email"
                       secondary={
-                        <a href="mailto:ryan.sl.carpenter@gmail.com">
+                        <a
+                          href="mailto:ryan.sl.carpenter@gmail.com"
+                          onClick={triggerEmailEvent}
+                        >
                           ryan.sl.carpenter@gmail.com
                         </a>
                       }
@@ -189,15 +210,17 @@ export default forwardRef((props, ref) => {
               component="a"
               href="/RyanSLCarpenter.pdf"
               className={classes.download}
+              onClick={triggerDownloadEvent}
             >
               Download Resume
             </Button>
-            <Typography className={classes.hello}>
+            {/* <Typography className={classes.hello}>
               Do I want an introductory paragraph here?
-            </Typography>
+            </Typography> */}
           </CardContent>
         </Card>
       </section>
+      <div className={classes.fadeToWhite}></div>
       <div className={classes.background}></div>
     </React.Fragment>
   );

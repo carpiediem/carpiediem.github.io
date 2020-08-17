@@ -44,8 +44,6 @@ export default function Project() {
   }
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
-
     const listener = debounce(() => {
       setScrolled(window.scrollY > 50);
     }, 100);
