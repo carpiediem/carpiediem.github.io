@@ -1,5 +1,3 @@
-// @see https://rscard.px-lab.com/startuper/
-
 import React, { useRef, useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
 
