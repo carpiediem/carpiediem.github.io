@@ -109,7 +109,7 @@ export default forwardRef((props, ref) => {
 
   return (
     <React.Fragment>
-      <section ref={ref} className={classes.root}>
+      <section ref={ref} className={classes.root} data-testid="About">
         <Card className={classes.card} variant="outlined">
           <CardContent className={classes.content}>
             <Grid container spacing={3}>

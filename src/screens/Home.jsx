@@ -37,13 +37,13 @@ export default function Home() {
   });
 
   return (
-    <React.Fragment>
+    <div data-testid="home">
       <NavBar section={section} />
       <About ref={refs.about} />
       <Skills ref={refs.skills} />
       <Portfolio ref={refs.portfolio} />
       <Experience ref={refs.experience} />
       <Education ref={refs.education} />
-    </React.Fragment>
+    </div>
   );
 }

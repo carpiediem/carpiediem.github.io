@@ -29,20 +29,18 @@ export default forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <section ref={ref} className={classes.root}>
-        <Typography variant="h4" component="h2" className={classes.h2}>
-          <a name="experience" href="#experience">
-            Work Experience
-          </a>
-        </Typography>
+    <section ref={ref} className={classes.root} data-testid="Experience">
+      <Typography variant="h4" component="h2" className={classes.h2}>
+        <a name="experience" href="#experience">
+          Work Experience
+        </a>
+      </Typography>
 
-        <Timeline align="alternate">
-          {jobs.map((job) => (
-            <Job key={job.years} {...job} />
-          ))}
-        </Timeline>
-      </section>
-    </React.Fragment>
+      <Timeline align="alternate">
+        {jobs.map((job) => (
+          <Job key={job.years} {...job} />
+        ))}
+      </Timeline>
+    </section>
   );
 });

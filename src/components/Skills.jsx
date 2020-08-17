@@ -31,21 +31,19 @@ export default forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <section ref={ref} className={classes.root}>
-        <Typography variant="h4" component="h2" className={classes.h2}>
-          <a name="skills" href="#skills">
-            Skills
-          </a>
-        </Typography>
-        <Grid container spacing={5}>
-          {skills.map((skill) => (
-            <Grid key={skill.name} item sm={4} className={classes.item}>
-              <Skill {...skill} />
-            </Grid>
-          ))}
-        </Grid>
-      </section>
-    </React.Fragment>
+    <section ref={ref} className={classes.root} data-testid="Skills">
+      <Typography variant="h4" component="h2" className={classes.h2}>
+        <a name="skills" href="#skills">
+          Skills
+        </a>
+      </Typography>
+      <Grid container spacing={5}>
+        {skills.map((skill) => (
+          <Grid key={skill.name} item sm={4} className={classes.item}>
+            <Skill {...skill} />
+          </Grid>
+        ))}
+      </Grid>
+    </section>
   );
 });

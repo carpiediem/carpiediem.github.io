@@ -28,20 +28,18 @@ export default forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <section ref={ref} className={classes.root}>
-        <Typography variant="h4" component="h2" className={classes.h2}>
-          <a name="education" href="#education">
-            Education
-          </a>
-        </Typography>
+    <section ref={ref} className={classes.root} data-testid="Education">
+      <Typography variant="h4" component="h2" className={classes.h2}>
+        <a name="education" href="#education">
+          Education
+        </a>
+      </Typography>
 
-        <Timeline align="alternate">
-          {schools.map((school) => (
-            <School key={school.years} {...school} />
-          ))}
-        </Timeline>
-      </section>
-    </React.Fragment>
+      <Timeline align="alternate">
+        {schools.map((school) => (
+          <School key={school.years} {...school} />
+        ))}
+      </Timeline>
+    </section>
   );
 });

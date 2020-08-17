@@ -61,7 +61,7 @@ export default function NavBar(props) {
   const narrow = window.innerWidth < 600;
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} data-testid="NavBar">
       <AppBar
         color="transparent"
         className={section ? classes.appbar : classes.atTop}

@@ -83,80 +83,78 @@ export default forwardRef((props, ref) => {
   const scrollUp = () => window.scrollTo(0, 0);
 
   return (
-    <React.Fragment>
-      <section ref={ref} className={classes.root}>
-        <Typography variant="h4" component="h2" className={classes.h2}>
-          <a name="portfolio" href="#portfolio">
-            {' '}
-            Portfolio
-          </a>
-        </Typography>
-        <GridList cellHeight={300} spacing={15} className={classes.gridList}>
-          {projects.map((tile) => (
-            <GridListTile
-              key={tile.img}
-              cols={tile.featured ? 2 : 1}
-              rows={tile.featured ? 2 : 1}
-              component="article"
-              className={classes.tile}
-            >
-              <img src={tile.img} alt={tile.title} />
-              <GridListTileBar
-                title={
-                  <React.Fragment>
-                    <h3>{tile.title}</h3>
-                    <div className="tags">
-                      {tile.tags && tile.tags.length ? (
-                        tile.tags.sort().map((tag, i) => (
-                          <span key={tag}>
-                            {i ? ', ' : ''}
-                            {tag}
-                          </span>
-                        ))
-                      ) : (
-                        <span>&nbsp;</span>
-                      )}
-                    </div>
-                    <div className="actions">
+    <section ref={ref} className={classes.root} data-testid="Portfolio">
+      <Typography variant="h4" component="h2" className={classes.h2}>
+        <a name="portfolio" href="#portfolio">
+          {' '}
+          Portfolio
+        </a>
+      </Typography>
+      <GridList cellHeight={300} spacing={15} className={classes.gridList}>
+        {projects.map((tile) => (
+          <GridListTile
+            key={tile.img}
+            cols={tile.featured ? 2 : 1}
+            rows={tile.featured ? 2 : 1}
+            component="article"
+            className={classes.tile}
+          >
+            <img src={tile.img} alt={tile.title} />
+            <GridListTileBar
+              title={
+                <React.Fragment>
+                  <h3>{tile.title}</h3>
+                  <div className="tags">
+                    {tile.tags && tile.tags.length ? (
+                      tile.tags.sort().map((tag, i) => (
+                        <span key={tag}>
+                          {i ? ', ' : ''}
+                          {tag}
+                        </span>
+                      ))
+                    ) : (
+                      <span>&nbsp;</span>
+                    )}
+                  </div>
+                  <div className="actions">
+                    <Button
+                      variant="outlined"
+                      component={Link}
+                      to={`/projects/${tile.id}`}
+                      onClick={scrollUp}
+                    >
+                      <ZoomIcon />
+                    </Button>
+                    {tile.demo && (
                       <Button
                         variant="outlined"
-                        component={Link}
-                        to={`/projects/${tile.id}`}
-                        onClick={scrollUp}
+                        component="a"
+                        href={tile.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <ZoomIcon />
+                        <LinkIcon />
                       </Button>
-                      {tile.demo && (
-                        <Button
-                          variant="outlined"
-                          component="a"
-                          href={tile.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <LinkIcon />
-                        </Button>
-                      )}
-                      {tile.github && (
-                        <Button
-                          variant="outlined"
-                          component="a"
-                          href={tile.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <GitHubIcon />
-                        </Button>
-                      )}
-                    </div>
-                  </React.Fragment>
-                }
-                className={classes.tileBar}
-              />
-            </GridListTile>
-          ))}
-        </GridList>
-      </section>
-    </React.Fragment>
+                    )}
+                    {tile.github && (
+                      <Button
+                        variant="outlined"
+                        component="a"
+                        href={tile.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <GitHubIcon />
+                      </Button>
+                    )}
+                  </div>
+                </React.Fragment>
+              }
+              className={classes.tileBar}
+            />
+          </GridListTile>
+        ))}
+      </GridList>
+    </section>
   );
 });
