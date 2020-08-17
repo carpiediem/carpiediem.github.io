@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 960,
     padding: '0 15px',
     margin: 'auto',
-    marginBottom: -800,
+    '@media only screen and (min-width: 600px)': { marginBottom: -800 },
   },
   h2: {
     color: 'rgb(61, 68, 81)',
