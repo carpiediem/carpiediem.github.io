@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.88rem',
     fontWeight: 600,
     textAlign: 'center',
-    marginTop: 60,
+    marginTop: 10,
     marginBottom: 30,
-    '& a': { textDecoration: 'none', color: 'inherit' },
+    '& a': { paddingTop: 50, textDecoration: 'none', color: 'inherit' },
   },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
@@ -86,7 +86,6 @@ export default forwardRef((props, ref) => {
     <section ref={ref} className={classes.root} data-testid="Portfolio">
       <Typography variant="h4" component="h2" className={classes.h2}>
         <a name="portfolio" href="#portfolio">
-          {' '}
           Portfolio
         </a>
       </Typography>

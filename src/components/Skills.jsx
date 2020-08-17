@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.88rem',
     fontWeight: 600,
     textAlign: 'center',
-    marginTop: 60,
+    marginTop: 10,
     marginBottom: 30,
-    '& a': { textDecoration: 'none', color: 'inherit' },
+    '& a': { paddingTop: 50, textDecoration: 'none', color: 'inherit' },
   },
   item: {
     width: 'inherit',
