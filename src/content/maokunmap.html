@@ -1,0 +1,42 @@
+<p>
+  The
+  <a href="https://en.wikipedia.org/wiki/Mao_Kun_map" target="_blank"
+    >Mao Kun map</a
+  >
+  is the oldest Chinese document showing a large part of the world outside
+  China. It's largely based on the voyages of Zheng He during the Ming Dynasty.
+  As an intersection between history, cartography, and my current home, Hong
+  Kong, the map has interested me for a while. But, I've been frustrated with
+  how difficult it can be to read.
+</p>
+<p>
+  The map was originally printed on 18 sheets of paper, read right to left from
+  Nanjing to Hormuz. My interest in building a web site for the map grew once I
+  stumbled upon
+  <a href="https://barbierilow.faculty.history.ucsb.edu/?p=764" target="_blank"
+    >a copy made in image tiles</a
+  >, ready for digital mapping.
+</p>
+<p>
+  I started by building a map editing tool in React.js and Leaflet.js. I
+  advertised it in various online communities interested in Chinese History, in
+  order to crowd-source the transcription and translation of the map. Volunteers
+  could click on a map label, then enter it's text, translation and (if known)
+  modern name in a small form. In this way, all 551 plotted locations were
+  transcribed, along with a few dozen long strings of navigation instructions. I
+  dug through some historical references to identify as many locations as
+  possible, including latitude and longitude of each.
+</p>
+<p>
+  With this data compiled, I generated a geoJSON file with all the details to
+  plot on both the Mao Kun map and a modern projection of the globe. In the
+  "explore" version of the web site, these maps are presented one above the
+  other. Dragging the Mao Kun map causes the modern map to automatically pan
+  toward the equivalent view. Clicking on a marker in one map highlights its
+  twin in the other. Each marker links to Wikipedia articles related to the
+  place in question.
+</p>
+<p>
+  At the top, a colorful mini-map shows the entire Mao Kun map at once, with
+  colors corresponding to the borders of modern provinces and nations.
+</p>

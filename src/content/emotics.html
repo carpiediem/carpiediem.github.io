@@ -1,0 +1,33 @@
+<p>
+  At <a href="https://emotics.co" target="_blank">Emotics</a>, I built a suite
+  of tools to collect data, submit and process it, and display it to
+  stakeholders. This started with a modularized JavaScript SDK, which allowed
+  different features to be easily enabled, disable, and configured in different
+  integrations. The SDK could be embedded directly into web pages or packaged
+  into e-learning content, like SCORM modules. The SCORM injected a new menu
+  into the existing content to present terms and conditions to the learner and
+  request that they agree to have the learning session monitored. After that it
+  would capture snapshots from the webcam and analyze the imagery for
+  authentication and attention tracking.
+</p>
+<img
+  src="/img/emotics-tech-stack.png"
+  style="float: right; height: 10em; margin: 0 0 5px 5px;"
+/>
+
+<p>
+  No imagery left the learners' laptops. Instead our artificial intelligence ran
+  in their browser and sent only its results to the Emotics API. This was built
+  on Express.js and deployed with AWS Elastic Beanstalk to ensure scalability
+  and reliable service. This utilized a PostreSQL database cluster on RDS for
+  storage.
+</p>
+<p>
+  After some post-processing to summarize each session and optimize data schemas
+  for reporting, our analytics console front-end could be used to review the
+  collected data and the insights our system provided. Compiance managers could
+  identify potential problems with ignored sessions or cheating and learning
+  management teams could identify exactly which elements of their content were
+  succeeding and which were putting learners to sleep. The console was built as
+  a React.js single-page app using material design standards.
+</p>

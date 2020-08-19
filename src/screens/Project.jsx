@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { makeStyles } from '@material-ui/core/styles';
+// import ButtonGroup from '@material-ui/core/ButtonGroup';
+import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import LinkIcon from '@material-ui/icons/Link';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import NavBar from '../components/NavBar';
 import projects from '../content/projects.json';
@@ -63,6 +67,26 @@ export default function Project() {
               src={summary.img}
               className={classes.img}
             />
+            {summary.demo && (
+              <IconButton
+                aria-label="view"
+                component="a"
+                href={summary.demo}
+                target="_blank"
+              >
+                <LinkIcon />
+              </IconButton>
+            )}
+            {summary.github && (
+              <IconButton
+                aria-label="view"
+                component="a"
+                href={summary.github}
+                target="_blank"
+              >
+                <GitHubIcon />
+              </IconButton>
+            )}
           </Grid>
           <Grid item sm={6} className={classes.item}>
             <Typography variant="h4" component="h1" className={classes.title}>

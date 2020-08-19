@@ -97,6 +97,9 @@ export default forwardRef((props, ref) => {
             rows={tile.featured ? 2 : 1}
             component="article"
             className={classes.tile}
+            // component={Link}
+            // to={`/projects/${tile.id}`}
+            // onClick={scrollUp}
           >
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar

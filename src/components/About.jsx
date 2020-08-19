@@ -208,7 +208,7 @@ export default forwardRef((props, ref) => {
               variant="outlined"
               size="large"
               component="a"
-              href="/RyanSLCarpenter.pdf"
+              href="/downloads/RyanSLCarpenter.pdf"
               className={classes.download}
               onClick={triggerDownloadEvent}
             >

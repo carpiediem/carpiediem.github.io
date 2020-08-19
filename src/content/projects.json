@@ -1,12 +1,45 @@
 [
   {
+    "id": "emotics",
+    "img": "/img/emotics.png",
+    "title": "Emotics Attention Analytics Platform",
+    "tags": ["aws", "api", "sdk"],
+    "featured": false,
+    "github": "https://github.com/Emotics",
+    "demo": "https://console.demo.emotics.co/"
+  },
+  {
+    "id": "prattle",
+    "img": "/img/prattle.png",
+    "title": "Emotion Analysis Tool for Video",
+    "tags": ["AI", "web"],
+    "featured": false,
+    "demo": "https://prattle.co/prattle-and-emotics-analyze-powells-expressions-during-first-post-fomc-press-conference/"
+  },
+  {
     "id": "gameofthrones",
     "img": "/img/quartermaester.png",
     "title": "Game of Thrones Map with Spoiler Control",
     "tags": ["maps", "web"],
     "featured": false,
-    "github": "",
+    "github": "https://github.com/carpiediem/quartermaester",
     "demo": "https://quartermaester.info/"
+  },
+  {
+    "id": "kellettswimschool",
+    "img": "/img/kellettswimschool.jpg",
+    "title": "Coaching Resources for Swim School",
+    "tags": ["web"],
+    "featured": false
+  },
+  {
+    "id": "maokunmap",
+    "img": "/img/maokunmap.png",
+    "title": "Mao Kun Map Explorer",
+    "tags": ["history", "maps", "web"],
+    "featured": false,
+    "github": "https://github.com/carpiediem/maokun-explorer",
+    "demo": "https://zhenghe.rslc.us/"
   },
   {
     "id": "masters",
@@ -21,7 +54,7 @@
     "img": "/img/hk_taxi_stands.png",
     "title": "Hong Kong Taxi Stands Mobile App",
     "tags": ["maps", "hybrid apps"],
-    "github": "",
+    "github": "https://github.com/carpiediem/old-website/tree/master/hk_taxi_stands",
     "demo": "https://play.google.com/store/apps/details?id=us.rslc.hk_taxi_stands"
   },
   {
@@ -30,14 +63,22 @@
     "title": "SoHo Bus Routes Diagram",
     "tags": ["maps", "Hong Kong"],
     "github": "",
-    "demo": ""
+    "demo": "/downloads/SoHoBusMap.pdf"
   },
   {
-    "id": "timescaledmap",
+    "id": "mtrmaps",
     "img": "/img/timescaledmap.png",
-    "title": "Time-Scaled MTR Maps",
+    "title": "Maps of the Hong Kong MTR",
     "tags": ["maps", "Hong Kong"],
     "github": "",
-    "demo": ""
+    "demo": "/downloads/time-scaled-mtr-map-polar.png"
+  },
+  {
+    "id": "hongkongnamesakes",
+    "img": "/img/hk-street-namesakes.png",
+    "title": "Namesake Streets in Hong Kong",
+    "tags": ["maps", "Hong Kong"],
+    "github": "",
+    "demo": "https://www.google.com/maps/d/viewer?mid=1mCCkNtu38c2OH1tCa4RcMrKEG-E&ll=22.289405184339113%2C114.17646327888576&z=14"
   }
 ]
