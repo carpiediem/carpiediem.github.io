@@ -1,4 +1,4 @@
-name: CI/CD
+name: Continuous Deploymwent
 
 on:
   push:
@@ -42,9 +42,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Build
-        run: npm run build
-
+      # pre-deploy script triggers build
       - name: Deploy
         run: |
           git config --global user.name $user_name
