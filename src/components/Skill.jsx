@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     marginBottom: 20,
   },
-  description: { textAlign: 'justify' },
+  // description: { textAlign: 'justify' },
 }));
 
 export default function Skill(props) {

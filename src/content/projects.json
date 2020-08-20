@@ -5,8 +5,8 @@
     "title": "Emotics Attention Analytics Platform",
     "tags": ["aws", "api", "sdk"],
     "featured": false,
-    "github": "https://github.com/Emotics",
-    "demo": "https://console.demo.emotics.co/"
+    "private-github": "https://github.com/Emotics",
+    "demo": "https://www.youtube.com/watch?v=ZknRbd9BwVA"
   },
   {
     "id": "prattle",

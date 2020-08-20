@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { makeStyles } from '@material-ui/core/styles';
 // import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -39,6 +39,7 @@ export default function Project() {
   const [scrolled, setScrolled] = useState(false);
 
   const summary = projects.find((p) => p.id === id);
+
   let content = '<p>TBD</p>';
 
   try {
@@ -55,6 +56,8 @@ export default function Project() {
     window.addEventListener('scroll', listener);
     return () => window.removeEventListener('scroll', listener);
   });
+
+  if (!summary) return <Redirect to="/" />;
 
   return (
     <div className={classes.root}>
