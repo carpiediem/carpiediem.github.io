@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
   item: {
     width: 'inherit',
     color: 'rgb(61, 68, 81)',
+    '& a': { outline: 'none' },
   },
   list: {
     '& li': {
