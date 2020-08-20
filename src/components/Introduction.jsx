@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-import SpeechBubble from './SpeechBubble';
+// import SpeechBubble from './SpeechBubble';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,14 +23,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Introduction(props) {
   const classes = useStyles();
   const {
-    bubble = 'Hey, there',
+    // bubble = 'Hey, there',
     name = 'John Smith',
     role = 'Human Person',
   } = props;
 
   return (
     <div className={classes.root}>
-      <SpeechBubble text={bubble} />
+      {/* <SpeechBubble text={bubble} /> */}
       <Typography variant="h4" component="h1" className={classes.name}>
         {name}
       </Typography>

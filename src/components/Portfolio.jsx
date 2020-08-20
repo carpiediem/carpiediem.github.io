@@ -27,7 +27,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: 10,
     marginBottom: 30,
-    '& a': { paddingTop: 50, textDecoration: 'none', color: 'inherit' },
+    '& a': {
+      paddingTop: 50,
+      textDecoration: 'none',
+      color: 'inherit',
+      outline: 'none',
+    },
   },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.

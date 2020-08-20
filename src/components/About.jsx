@@ -140,7 +140,8 @@ export default forwardRef((props, ref) => {
                 <Introduction
                   name={
                     <React.Fragment>
-                      <span className="thin">I'm </span>Ryan{' '}
+                      {/* <span className="thin">I'm </span> */}
+                      Ryan{' '}
                       <ColorTooltip
                         arrow
                         title="Scott Luong"
@@ -201,6 +202,14 @@ export default forwardRef((props, ref) => {
               target="_blank"
             >
               <Icon className="fab fa-angellist" />
+            </IconButton>
+            <IconButton
+              aria-label="Stack Overflow"
+              component="a"
+              href="https://stackoverflow.com/users/1811952/carpiediem?tab=profile"
+              target="_blank"
+            >
+              <Icon className="fab fa-stack-overflow" />
             </IconButton>
           </CardActions>
           <CardContent className={classes.content}>

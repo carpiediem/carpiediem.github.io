@@ -19,7 +19,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: 10,
     marginBottom: 30,
-    '& a': { paddingTop: 50, textDecoration: 'none', color: 'inherit' },
+    '& a': {
+      paddingTop: 50,
+      textDecoration: 'none',
+      color: 'inherit',
+      outline: 'none',
+    },
   },
   item: {
     width: 'inherit',
