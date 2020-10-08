@@ -80,5 +80,20 @@
     "tags": ["maps", "Hong Kong"],
     "github": "",
     "demo": "https://www.google.com/maps/d/viewer?mid=1mCCkNtu38c2OH1tCa4RcMrKEG-E&ll=22.289405184339113%2C114.17646327888576&z=14"
+  },
+  {
+    "id": "d3curve",
+    "img": "/img/d3curve.png",
+    "title": "d3 Curve Function for Circular Corners",
+    "tags": ["open source", "d3", "maps"],
+    "github": "https://github.com/carpiediem/d3-curve-circlecorners",
+    "demo": "https://observablehq.com/@carpiediem/svg-paths-with-circular-corners"
+  },
+  {
+    "id": "watermargin",
+    "img": "/img/watermargin.png",
+    "title": "Water Margin Narrative Chart",
+    "tags": ["visualization", "china"],
+    "demo": "https://observablehq.com/@carpiediem/water-margin-narrative-chart"
   }
 ]
