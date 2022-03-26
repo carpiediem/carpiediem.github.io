@@ -1,8 +1,0 @@
-# Dependency directories
-node_modules/
-
-# Output
-build/
-
-# MacOS
-.DS_Store
