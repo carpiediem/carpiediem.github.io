@@ -80,7 +80,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.light,
   },
   logo: { width: 200, maxWidth: '100%', margin: '15px 0' },
-  description: { color: '#757575' }, // textAlign: 'justify',
+  description: {
+    textAlign: 'left',
+    color: '#757575'
+  },
 }));
 
 export default function Job(props) {

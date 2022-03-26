@@ -1,9 +1,44 @@
 [
   {
+    "id": "easyship-portals",
+    "img": "https://easyship.ghost.io/content/images/size/w2000/2021/05/2021_Blog_Feature_Launch_Collect--1-.jpg",
+    "title": "Easyship Buyer-Facing Portals",
+    "tags": ["web", "work"],
+    "featured": false,
+    "private-github": "https://github.com/easyship",
+    "demo": "https://www.easyship.com/blog/easyship-collect"
+  },
+  {
+    "id": "easyship-widget",
+    "img": "https://easyship.ghost.io/content/images/size/w2000/2021/07/2021_Blog_Feature_Launch_InsuranceAtCheckout.jpg",
+    "title": "Easyship Insurance at Checkout",
+    "tags": ["shopify", "work"],
+    "featured": false,
+    "private-github": "https://github.com/easyship",
+    "demo": "https://www.easyship.com/blog/feature-insurance-at-checkout"
+  },
+  {
+    "id": "wordleb0t",
+    "img": "/img/wordleb0t.png",
+    "title": "Wordleb0t",
+    "tags": ["microservices", "games", "web"],
+    "featured": false,
+    "github": "https://github.com/carpiediem/wordleb0t",
+    "demo": "https://wordleb0t.rslc.us/"
+  },
+  {
+    "id": "nathan-road-solar-system",
+    "img": "/img/nathan-road-solar-system.jpg",
+    "title": "Nathan Road Model Solar System",
+    "tags": ["education", "maps"],
+    "featured": false,
+    "demo": "https://docs.google.com/presentation/d/1NgWAlLeQxwno6Z9c3KubPvh2MOjrOxpoV6jJMSmmi7E"
+  },
+  {
     "id": "emotics",
     "img": "/img/emotics.png",
     "title": "Emotics Attention Analytics Platform",
-    "tags": ["aws", "api", "sdk"],
+    "tags": ["aws", "api", "sdk", "work"],
     "featured": false,
     "private-github": "https://github.com/Emotics",
     "demo": "https://www.youtube.com/watch?v=ZknRbd9BwVA"
@@ -12,9 +47,18 @@
     "id": "prattle",
     "img": "/img/prattle.png",
     "title": "Emotion Analysis Tool for Video",
-    "tags": ["AI", "web"],
+    "tags": ["AI", "web", "work"],
     "featured": false,
     "demo": "https://prattle.co/prattle-and-emotics-analyze-powells-expressions-during-first-post-fomc-press-conference/"
+  },
+  {
+    "id": "maokunmap",
+    "img": "/img/maokunmap.png",
+    "title": "Mao Kun Map Explorer",
+    "tags": ["history", "maps", "web"],
+    "featured": false,
+    "github": "https://github.com/carpiediem/maokun-explorer",
+    "demo": "https://zhenghe.rslc.us/"
   },
   {
     "id": "gameofthrones",
@@ -31,15 +75,6 @@
     "title": "Coaching Resources for Swim School",
     "tags": ["web"],
     "featured": false
-  },
-  {
-    "id": "maokunmap",
-    "img": "/img/maokunmap.png",
-    "title": "Mao Kun Map Explorer",
-    "tags": ["history", "maps", "web"],
-    "featured": false,
-    "github": "https://github.com/carpiediem/maokun-explorer",
-    "demo": "https://zhenghe.rslc.us/"
   },
   {
     "id": "masters",

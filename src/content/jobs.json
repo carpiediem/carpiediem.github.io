@@ -1,11 +1,21 @@
 [
   {
+    "years": "2020 - 2022",
+    "company": "Easyship",
+    "url": "https://www.easyship.com/",
+    "logo": "https://www.easyship.com/icons/easyship-logo.svg",
+    "role": "Lead Frontend Developer",
+    "description": "I'm leading our frontend team as we expand both our product offerings and market presence. The team itself has expanded from a single office to span three continents. I've spearheaded efforts to internationalize our apps, migrate from AngularJS to React.js, and improve performance across the board."
+  },
+  {
     "years": "2017 - 2020",
     "company": "Emotics",
     "url": "https://www.emotics.co/",
     "logo": "https://assets.website-files.com/5eb4f25860b62174c8fc3c2c/5efe069e7639e56050e09f68_emotics-eye-name-og-size.svg",
     "role": "Co-founder & Tech Lead",
-    "description": "Founded Emotics to solve some clear failings in corporate learning software. Used webcam snapshots to approach a solution from two directions: by gathering real-time, subconscious feedback on the content that each learner is viewing and by leveraging facial recognition tech and behavior analysis to identify “cheating” behaviors. Led Emotics’ tech development, building an SDK to integrate with client software, an API to collect data and serve results, and a front-end website for compliance managers to view analytics and review alerts. Maintained infrastructure, tests, and documentation for enterprise-level reliability and issue response. Supported investment and sales efforts by clearly explaining system architectures, managing on-boarding, and addressing IT concerns. Served several fortune 500 companies in the financial services and insurance sector."
+    "description": "Founded Emotics to solve some clear failings in corporate learning software. Used webcam snapshots to approach a solution from two directions: by gathering real-time, subconscious feedback on the content that each learner is viewing and by leveraging facial recognition tech and behavior analysis to identify “cheating” behaviors. Led Emotics' tech development, building an SDK to integrate with client software, an API to collect data and serve results, and a front-end website for compliance managers to view analytics and review alerts. Maintained infrastructure, tests, and documentation for enterprise-level reliability and issue response. Supported investment and sales efforts by clearly explaining system architectures, managing on-boarding, and addressing IT concerns. Served several fortune 500 companies in the financial services and insurance sector.",
+    "side": "right",
+    "offset": -300
   },
   {
     "years": "2015 - 2016",
@@ -13,9 +23,8 @@
     "url": "https://www.gbst.com/",
     "logo": "https://www.gbst.com/wp-content/themes/devdmbootstrap3-child/images/gbst-header-logo-fixed.png",
     "role": "App Strategy Consultant / Product Manager",
-    "description": "Formed a strategy for integrating mobile apps into GBST’s financial services software. Hired and remotely-managed development team based in Vietnam. Built prototypes and pitched them to GBST clients, following agile processes for frequent releases.",
-    "side": "right",
-    "offset": -595
+    "description": "Formed a strategy for integrating mobile apps into GBST's financial services software. Hired and remotely-managed development team based in Vietnam. Built prototypes and pitched them to GBST clients, following agile processes for frequent releases.",
+    "offset": -650
   },
   {
     "years": "2014",
@@ -24,8 +33,7 @@
     "logo": "/img/exicon.png",
     "role": "Operations Transformation Project",
     "description": "Identified gaps in and reorganized the company budget to successfully reduce costs and increase revenues. Created a pricing strategy to be attractive to both low-touch users and large enterprise clients. Established team metrics and the systems to monitor them.",
-    "side": "right",
-    "offset": -560
+    "offset": -635
   },
   {
     "years": "2007 - 2014",
@@ -34,7 +42,8 @@
     "logo": "/img/loadstar.png",
     "role": "Program Manager",
     "description": "Directed hardware development of our shipping-container-monitoring product through a new Chinese manufacturing partner. Supported the management of our 30-person software development team contracted in Beijing.",
-    "offset": -620
+    "side": "right",
+    "offset": -970
   },
   {
     "years": "2004 - 2007",
@@ -44,6 +53,6 @@
     "role": "TSAT Mission Operations System (TMOS) Risk Manager",
     "description": "Managed authors of a 500+ page bid-winning, proposal document for a large defense contract. Directed the creation of mitigation plans that would eliminate 90% of program risk over contract lifetime and monitored their execution.",
     "side": "right",
-    "offset": -840
+    "offset": -960
   }
 ]

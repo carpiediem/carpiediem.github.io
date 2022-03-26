@@ -1,0 +1,23 @@
+<p>
+  <a href="https://en.wikipedia.org/wiki/Mao_Kun_map" target="_blank">Wordleb0t</a>
+  is both a
+  <a href="https://wordleb0t.rslc.us/" target="_blank">web-based game</a>
+  and a
+  <a href="https://twitter.com/wordleb0t" target="_blank">Twitter-facing microservice</a>
+  that plays games of
+  <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" rel="noopener noreferrer">Wordle</a>.
+  I built it to see how effective a simple algorithm could be at solving these kind of games.
+</p>
+<p>
+  Wordleb0t uses two dictionaries: a broad word set containing every English word that's not a proper noun and a more
+  limited set that is ranked by usaging by typical English speakers. These were both forked from
+  <a href="https://twitter.com/chordbug" target="_blank">@chordbug</a>'s
+  excellent <a href="https://github.com/lynn/hello-wordl" target="_blank">hello wordl</a>
+  project. These are used to calculate, for any given word, a weighted score from its usage rank and how often its
+  individual letters are found in other words. Possible guesses are limited by a regular expression built from the
+  letters and colors from each round played.
+</p>
+<p>
+  It performs quite well. It has a 100% win rate on the official wordle game and even I have a hard time picking words
+  that will stump it ("sandy" proved too much). Have a try and see how you do.
+</p>
