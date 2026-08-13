@@ -1,7 +1,7 @@
 [
   {
     "id": "easyship-portals",
-    "img": "https://easyship.ghost.io/content/images/size/w2000/2021/05/2021_Blog_Feature_Launch_Collect--1-.jpg",
+    "img": "https://cdn.prod.website-files.com/660e658d0cfb31720d8934d0/670946ae5ffb5b512a8dc806_66bb7ae219dbacdbc6ff6cab_2021_Blog_Feature_Launch_Collect--1-.webp",
     "title": "Easyship Buyer-Facing Portals",
     "tags": ["web", "work"],
     "featured": false,
@@ -10,7 +10,7 @@
   },
   {
     "id": "easyship-widget",
-    "img": "https://easyship.ghost.io/content/images/size/w2000/2021/07/2021_Blog_Feature_Launch_InsuranceAtCheckout.jpg",
+    "img": "https://cdn.prod.website-files.com/660e658d0cfb31720d8934d0/670946675b07dd436b588733_66bc68caa18ff494d394d886_2021_Blog_Feature_Launch_InsuranceAtCheckout.webp",
     "title": "Easyship Insurance at Checkout",
     "tags": ["shopify", "work"],
     "featured": false,
@@ -67,7 +67,7 @@
     "tags": ["maps", "web"],
     "featured": false,
     "github": "https://github.com/carpiediem/quartermaester",
-    "demo": "https://rslc.us/game-of-thrones-map/"
+    "demo": "/game-of-thrones-map"
   },
   {
     "id": "kellettswimschool",
@@ -90,7 +90,7 @@
     "title": "Hong Kong Taxi Stands Mobile App",
     "tags": ["maps", "hybrid apps"],
     "github": "https://github.com/carpiediem/old-website/tree/master/hk_taxi_stands",
-    "demo": "https://play.google.com/store/apps/details?id=us.rslc.hk_taxi_stands"
+    "old_demo": "https://play.google.com/store/apps/details?id=us.rslc.hk_taxi_stands"
   },
   {
     "id": "sohobusmap",
