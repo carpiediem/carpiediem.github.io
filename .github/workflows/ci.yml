@@ -40,6 +40,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Merge the pull request
-        uses: 'pascalgn/automerge-action@f81beb99aef41bb55ad072857d43073fba833a98'
+        uses: 'pascalgn/automerge-action@v0.16.4'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
