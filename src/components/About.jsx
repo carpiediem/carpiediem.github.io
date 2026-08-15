@@ -152,7 +152,7 @@ export default forwardRef((props, ref) => {
                       Carpenter
                     </React.Fragment>
                   }
-                  role="Software Engineer & Entreprenuer"
+                  role="Software Engineer & Entrepreneur"
                 />
                 <List className={classes.list}>
                   <ListItem>
