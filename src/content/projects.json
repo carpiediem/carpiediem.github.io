@@ -24,7 +24,7 @@
     "tags": ["microservices", "games", "web"],
     "featured": false,
     "github": "https://github.com/carpiediem/wordleb0t",
-    "demo": "https://wordleb0t.rslc.us/"
+    "demo": "https://carpiediem.github.io/wordleb0t/"
   },
   {
     "id": "nathan-road-solar-system",
@@ -58,7 +58,7 @@
     "tags": ["history", "maps", "web"],
     "featured": false,
     "github": "https://github.com/carpiediem/maokun-explorer",
-    "demo": "https://zhenghe.rslc.us/"
+    "demo": "https://carpiediem.github.io/maokun-explorer/"
   },
   {
     "id": "gameofthrones",
