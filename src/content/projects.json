@@ -1,5 +1,14 @@
 [
   {
+    "id": "splitmaster",
+    "img": "/img/splitmaster.png",
+    "title": "Splitmaster",
+    "tags": ["hybrid apps", "activities"],
+    "featured": false,
+    "private-github": "https://github.com/carpiediem/Splitmaster",
+    "demo": "https://play.google.com/apps/internaltest/4700349460430956357"
+  },
+  {
     "id": "easyship-portals",
     "img": "https://cdn.prod.website-files.com/660e658d0cfb31720d8934d0/670946ae5ffb5b512a8dc806_66bb7ae219dbacdbc6ff6cab_2021_Blog_Feature_Launch_Collect--1-.webp",
     "title": "Easyship Buyer-Facing Portals",

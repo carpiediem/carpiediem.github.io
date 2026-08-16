@@ -1,11 +1,21 @@
 [
   {
+    "years": "2022 - 2026",
+    "company": "Shopventory",
+    "url": "https://shopventory.com/",
+    "logo": "https://shopventory.com/wp-content/uploads/2022/02/Shopventory_Primary-Logo-Full-Color.svg",
+    "role": "Senior Software Engineer",
+    "description": "Served as the de facto frontend lead, owning architectural decisions across the codebase and running substantive code reviews that raised team-wide quality and consistency. Led the migration from legacy AngularJS pages to a maintainable, customer-friendly React front-end, and mentored our Python developers through the transition without being prescriptive. Proactively monitored customer feedback channels, translating issues into well-scoped tickets that closed the loop between user experience and engineering response. Helped lead a gradual shift in company culture toward a broader vision of product management.",
+    "side": "right"
+  },
+  {
     "years": "2020 - 2022",
     "company": "Easyship",
     "url": "https://www.easyship.com/",
     "logo": "https://www.easyship.com/icons/easyship-logo.svg",
     "role": "Lead Frontend Developer",
-    "description": "Managed our frontend team as we expanded both our product offerings and global market share. Grew the team from a single office to span three continents. Spearheaded efforts to internationalize our apps, migrate from AngularJS to React.js, and improve performance across the board. Helped Easyship triple the number of shipments sold on the platform, growing net sales by 35%."
+    "description": "Managed our frontend team as we expanded both our product offerings and global market share. Grew the team from a single office to span three continents. Spearheaded efforts to internationalize our apps, migrate from AngularJS to React.js, and improve performance across the board. Helped Easyship triple the number of shipments sold on the platform, growing net sales by 35%.",
+    "offset": -350
   },
   {
     "years": "2017 - 2020",
@@ -16,7 +26,7 @@
     "role": "Co-founder & Tech Lead",
     "description": "Founded Emotics to solve some clear failings in corporate learning software. Used webcam snapshots to approach a solution from two directions: by gathering real-time, subconscious feedback on the content that each learner is viewing and by leveraging facial recognition tech and behavior analysis to identify “cheating” behaviors. Led Emotics' tech development, building an SDK to integrate with client software, an API to collect data and serve results, and a front-end website for compliance managers to view analytics and review alerts. Maintained infrastructure, tests, and documentation for enterprise-level reliability and issue response. Supported investment and sales efforts by clearly explaining system architectures, managing on-boarding, and addressing IT concerns. Served several fortune 500 companies in the financial services and insurance sector.",
     "side": "right",
-    "offset": -300
+    "offset": -350
   },
   {
     "years": "2015 - 2016",
@@ -25,7 +35,7 @@
     "logo": "https://gbst.com/wp-content/uploads/2026/05/logo.svg",
     "role": "App Strategy Consultant / Product Manager",
     "description": "Formed a strategy for integrating mobile apps into GBST's financial services software. Hired and remotely-managed development team based in Vietnam. Built prototypes and pitched them to GBST clients, following agile processes for frequent releases.",
-    "offset": -580
+    "offset": -780
   },
   {
     "years": "2014",
@@ -34,7 +44,7 @@
     "logo": "/img/exicon.png",
     "role": "Operations Transformation Project",
     "description": "Identified gaps in and reorganized the company budget to successfully reduce costs and increase revenues. Created a pricing strategy to be attractive to both low-touch users and large enterprise clients. Established team metrics and the systems to monitor them.",
-    "offset": -570
+    "offset": -735
   },
   {
     "years": "2007 - 2014",
@@ -53,7 +63,6 @@
     "logo": "/img/lockheedmartin.png",
     "role": "TSAT Mission Operations System (TMOS) Risk Manager",
     "description": "Managed authors of a 500+ page bid-winning, proposal document for a large defense contract. Directed the creation of mitigation plans that would eliminate 90% of program risk over contract lifetime and monitored their execution.",
-    "side": "right",
-    "offset": -960
+    "offset": -1080
   }
 ]
