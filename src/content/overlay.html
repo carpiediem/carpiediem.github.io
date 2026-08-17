@@ -1,0 +1,16 @@
+<p>
+  Overlay is a mobile app scaffold I built around a single idea: a full-screen, pannable map that
+  flies to your current location the moment the app opens. It's the foundation I use to kick off
+  location-based app ideas without re-solving the same setup every time&mdash;permissions, a live
+  location "puck," and a map that actually feels native rather than embedded.
+</p>
+<p>
+  It's built with <a href="https://expo.dev" target="_blank" rel="noopener noreferrer">Expo</a> and
+  <a href="https://github.com/rnmapbox/maps" target="_blank" rel="noopener noreferrer">Mapbox GL via @rnmapbox/maps</a>,
+  using <a href="https://docs.expo.dev/versions/latest/sdk/location/" target="_blank" rel="noopener noreferrer">expo-location</a>
+  for permissions and positioning. Because it relies on native Mapbox modules, it ships as a custom
+  Expo dev client rather than running in Expo Go. The app is backed by a
+  <a href="https://fastify.dev/" target="_blank" rel="noopener noreferrer">Fastify</a> API on Cloud
+  Run, with infrastructure (Cloud Run, Cloud SQL, Storage, Artifact Registry) provisioned via
+  Terraform.
+</p>
