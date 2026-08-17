@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 25,
     margin: 'auto',
   },
-  img: { maxWidth: '100%' },
+  img: { maxWidth: "100%", maxHeight: "80vh" },
   title: { fontSize: 30, fontWeight: 700 },
   content: {
     color: '#666',
