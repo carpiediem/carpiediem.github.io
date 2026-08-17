@@ -1,22 +1,35 @@
 <p>
   Wordleb0t is both a
-  <a href="https://carpiediem.github.io/wordleb0t/" target="_blank">web-based game</a>
+  <a href="https://carpiediem.github.io/wordleb0t/" target="_blank"
+    >web-based game</a
+  >
   and a
-  <a href="https://twitter.com/wordleb0t" target="_blank">Twitter-facing microservice</a>
+  <a href="https://twitter.com/wordleb0t" target="_blank"
+    >Twitter-facing microservice</a
+  >
   that plays games of
-  <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" rel="noopener noreferrer">Wordle</a>.
-  I built it to see how effective a simple algorithm could be at solving this kind of game.
+  <a
+    href="https://www.nytimes.com/games/wordle/index.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Wordle</a
+  >. I built it to see how effective a simple algorithm could be at solving this
+  kind of game.
 </p>
 <p>
-  Wordleb0t uses two dictionaries: a broad word set containing every English word that is not a proper noun and a more
-  limited set that is ranked by usage among typical English speakers. These were both forked from
+  Wordleb0t uses two dictionaries: a broad word set containing every English
+  word that is not a proper noun and a more limited set that is ranked by usage
+  among typical English speakers. These were both forked from
   <a href="https://twitter.com/chordbug" target="_blank">@chordbug</a>'s
-  excellent <a href="https://github.com/lynn/hello-wordl" target="_blank">hello wordl</a>
-  project. These are used to calculate, for any given word, a weighted score from its usage rank and how often its
-  individual letters are found in other words. Possible guesses are limited by a regular expression built from the
+  excellent
+  <a href="https://github.com/lynn/hello-wordl" target="_blank">hello wordl</a>
+  project. These are used to calculate, for any given word, a weighted score
+  from its usage rank and how often its individual letters are found in other
+  words. Possible guesses are limited by a regular expression built from the
   letters and colors from each round played.
 </p>
 <p>
-  It performs quite well. It has a 100% win rate on the official wordle game and even I have a hard time picking words
-  that will stump it ("sandy" proved too much). Have a try and see how you do.
+  It performs quite well. It has a 100% win rate on the official wordle game and
+  even I have a hard time picking words that will stump it ("sandy" proved too
+  much). Have a try and see how you do.
 </p>

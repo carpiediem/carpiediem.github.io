@@ -1,11 +1,11 @@
-import { existsSync } from 'fs';
+import { existsSync } from "fs";
 
-import skills from './skills.json';
-import projects from './projects.json';
-import jobs from './jobs.json';
-import schools from './schools.json';
+import skills from "./skills.json";
+import projects from "./projects.json";
+import jobs from "./jobs.json";
+import schools from "./schools.json";
 
-test('defines projects array for the portfolio section', () => {
+test("defines projects array for the portfolio section", () => {
   expect(skills.length).toBeGreaterThan(0);
   skills.forEach((skill) => {
     expect(skill.name).toMatch(/\w+/);
@@ -14,7 +14,7 @@ test('defines projects array for the portfolio section', () => {
   });
 });
 
-test('defines projects array for the portfolio section', () => {
+test("defines projects array for the portfolio section", () => {
   expect(projects.length).toBeGreaterThan(0);
   projects.forEach((project) => {
     expect(project.id).toMatch(/\w+/);
@@ -25,7 +25,7 @@ test('defines projects array for the portfolio section', () => {
   });
 });
 
-test('defines jobs array for the experience section', () => {
+test("defines jobs array for the experience section", () => {
   expect(jobs.length).toBeGreaterThan(0);
   jobs.forEach((job) => {
     expect(job.years).toMatch(/\d{4}(\s-\s\d{4})?/);
@@ -38,7 +38,7 @@ test('defines jobs array for the experience section', () => {
   });
 });
 
-test('defines projects array for the portfolio section', () => {
+test("defines projects array for the portfolio section", () => {
   expect(projects.length).toBeGreaterThan(0);
   projects.forEach((project) => {
     expect(project.id).toMatch(/\w+/);
@@ -49,7 +49,7 @@ test('defines projects array for the portfolio section', () => {
   });
 });
 
-test('defines schools array for the education section', () => {
+test("defines schools array for the education section", () => {
   expect(schools.length).toBeGreaterThan(0);
   schools.forEach((school) => {
     expect(school.years).toMatch(/\d{4}(\s-\s\d{4})?/);
@@ -61,7 +61,7 @@ test('defines schools array for the education section', () => {
   });
 });
 
-test('includes HTML files for each project', () => {
+test("includes HTML files for each project", () => {
   projects.forEach((project) => {
     expect(existsSync(`src/content/${project.id}.html`)).toBeTruthy();
   });

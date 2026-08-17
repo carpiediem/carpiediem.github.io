@@ -2,7 +2,7 @@ module.exports = {
   webpack: function (config, env) {
     config.module.rules.push({
       test: /\.html$/i,
-      loader: 'html-loader',
+      loader: "html-loader",
     });
 
     return config;
@@ -10,9 +10,9 @@ module.exports = {
   jest: function (config) {
     // Bootstrapping code that's never worth unit testing.
     config.collectCoverageFrom = [
-      'src/**/*.{js,jsx}',
-      '!src/index.js',
-      '!src/serviceWorker.js',
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/serviceWorker.js",
     ];
 
     return config;
@@ -24,16 +24,22 @@ module.exports = {
   devServer: function (configFunction) {
     return function (proxy, allowedHost) {
       const config = configFunction(proxy, allowedHost);
-      const { onBeforeSetupMiddleware, onAfterSetupMiddleware, https, ...rest } = config;
+      const {
+        onBeforeSetupMiddleware,
+        onAfterSetupMiddleware,
+        https,
+        ...rest
+      } = config;
 
       // webpack-dev-server 5 replaced the `https` option with `server`.
       if (https) {
-        rest.server = https === true ? 'https' : { type: 'https', options: https };
+        rest.server =
+          https === true ? "https" : { type: "https", options: https };
       }
 
       rest.setupMiddlewares = (middlewares, devServer) => {
         if (!devServer) {
-          throw new Error('webpack-dev-server is not defined');
+          throw new Error("webpack-dev-server is not defined");
         }
 
         if (onBeforeSetupMiddleware) onBeforeSetupMiddleware(devServer);

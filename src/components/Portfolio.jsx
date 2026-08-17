@@ -1,84 +1,84 @@
-import React, { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import Typography from '@material-ui/core/Typography';
-import ZoomIcon from '@material-ui/icons/ZoomIn';
-import LinkIcon from '@material-ui/icons/Link';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import React, { forwardRef } from "react";
+import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+import Typography from "@material-ui/core/Typography";
+import ZoomIcon from "@material-ui/icons/ZoomIn";
+import LinkIcon from "@material-ui/icons/Link";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 // import Skill from './Skill';
-import projects from '../content/projects.json';
+import projects from "../content/projects.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 960,
-    padding: '0 15px',
-    margin: 'auto',
+    padding: "0 15px",
+    margin: "auto",
     marginBottom: 100,
   },
   h2: {
-    color: 'rgb(61, 68, 81)',
-    fontSize: '1.88rem',
+    color: "rgb(61, 68, 81)",
+    fontSize: "1.88rem",
     fontWeight: 600,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 10,
     marginBottom: 30,
-    '& a': {
+    "& a": {
       paddingTop: 50,
-      textDecoration: 'none',
-      color: 'inherit',
-      outline: 'none',
+      textDecoration: "none",
+      color: "inherit",
+      outline: "none",
     },
   },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: 'translateZ(0)',
+    transform: "translateZ(0)",
   },
   tile: {
-    '& .MuiGridListTileBar-titleWrap': {
+    "& .MuiGridListTileBar-titleWrap": {
       marginTop: 175,
-      transition: 'all 0.25s ease-out',
+      transition: "all 0.25s ease-out",
     },
-    '&:hover .MuiGridListTileBar-titleWrap': {
+    "&:hover .MuiGridListTileBar-titleWrap": {
       marginTop: 0,
     },
   },
   tileBar: {
-    transform: 'translate(0, 55px)',
+    transform: "translate(0, 55px)",
     background:
-      'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%)',
-    height: '75%',
+      "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%)",
+    height: "75%",
     bottom: 55,
     fontSize: 13,
     fontWeight: 400,
-    '& h3': {
-      color: 'white',
+    "& h3": {
+      color: "white",
       fontSize: 18,
       fontWeight: 600,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
-    '& div.tags span': {
-      color: 'rgba(255, 255, 255, 0.5)',
-      textTransform: 'uppercase',
+    "& div.tags span": {
+      color: "rgba(255, 255, 255, 0.5)",
+      textTransform: "uppercase",
     },
-    '& div.actions': {
+    "& div.actions": {
       marginTop: 20,
-      '& a.MuiButton-root': {
+      "& a.MuiButton-root": {
         padding: 10,
-        margin: '0 5px',
+        margin: "0 5px",
         color: theme.palette.primary.light,
-        borderColor: 'white',
-        '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.25)' },
-        '& svg': { fontSize: '1.8rem' },
+        borderColor: "white",
+        "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.25)" },
+        "& svg": { fontSize: "1.8rem" },
       },
     },
   },
   icon: {
-    color: 'white',
+    color: "white",
   },
 }));
 
@@ -115,7 +115,7 @@ export default forwardRef((props, ref) => {
                     {tile.tags && tile.tags.length ? (
                       tile.tags.sort().map((tag, i) => (
                         <span key={tag}>
-                          {i ? ', ' : ''}
+                          {i ? ", " : ""}
                           {tag}
                         </span>
                       ))

@@ -1,30 +1,30 @@
-import React, { forwardRef } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Timeline from '@material-ui/lab/Timeline';
-import Typography from '@material-ui/core/Typography';
+import React, { forwardRef } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Timeline from "@material-ui/lab/Timeline";
+import Typography from "@material-ui/core/Typography";
 
-import School from './School';
-import schools from '../content/schools.json';
+import School from "./School";
+import schools from "../content/schools.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 960,
-    padding: '0 15px',
-    margin: 'auto',
+    padding: "0 15px",
+    margin: "auto",
     marginBottom: -400,
   },
   h2: {
-    color: 'rgb(61, 68, 81)',
-    fontSize: '1.88rem',
+    color: "rgb(61, 68, 81)",
+    fontSize: "1.88rem",
     fontWeight: 600,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 10,
     marginBottom: 30,
-    '& a': {
+    "& a": {
       paddingTop: 50,
-      textDecoration: 'none',
-      color: 'inherit',
-      outline: 'none',
+      textDecoration: "none",
+      color: "inherit",
+      outline: "none",
     },
   },
 }));

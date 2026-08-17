@@ -1,12 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
-import debounce from 'lodash/debounce';
+import React, { useRef, useState, useEffect } from "react";
+import debounce from "lodash/debounce";
 
-import NavBar from '../components/NavBar';
-import About from '../components/About';
-import Skills from '../components/Skills';
-import Portfolio from '../components/Portfolio';
-import Experience from '../components/Experience';
-import Education from '../components/Education';
+import NavBar from "../components/NavBar";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Portfolio from "../components/Portfolio";
+import Experience from "../components/Experience";
+import Education from "../components/Education";
 
 export default function Home() {
   const [section, setSection] = useState(null);
@@ -30,8 +30,8 @@ export default function Home() {
       setSection(section && section[0]);
     }, 100);
 
-    window.addEventListener('scroll', listener);
-    return () => window.removeEventListener('scroll', listener);
+    window.addEventListener("scroll", listener);
+    return () => window.removeEventListener("scroll", listener);
   });
 
   return (

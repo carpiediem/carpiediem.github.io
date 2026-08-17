@@ -1,34 +1,34 @@
-import React, { forwardRef } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import React, { forwardRef } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
-import Skill from './Skill';
-import skills from '../content/skills.json';
+import Skill from "./Skill";
+import skills from "../content/skills.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 960,
-    padding: '0 15px',
-    margin: 'auto',
+    padding: "0 15px",
+    margin: "auto",
   },
   h2: {
-    color: 'rgb(61, 68, 81)',
-    fontSize: '1.88rem',
+    color: "rgb(61, 68, 81)",
+    fontSize: "1.88rem",
     fontWeight: 600,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 10,
     marginBottom: 30,
-    '& a': {
+    "& a": {
       paddingTop: 50,
-      textDecoration: 'none',
-      color: 'inherit',
-      outline: 'none',
+      textDecoration: "none",
+      color: "inherit",
+      outline: "none",
     },
   },
   item: {
-    width: 'inherit',
-    color: 'rgb(61, 68, 81)',
+    width: "inherit",
+    color: "rgb(61, 68, 81)",
   },
 }));
 

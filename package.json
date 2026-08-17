@@ -21,6 +21,7 @@
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
+    "prettier": "3.9.6",
     "react-app-rewired": "^2.1.6"
   },
   "overrides": {
@@ -39,6 +40,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
