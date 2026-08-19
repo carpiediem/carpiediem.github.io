@@ -1,11 +1,11 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
-// import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
 
@@ -89,7 +89,8 @@ export default function Job(props) {
     years = "THEN - NOW",
     company = "Evercorp",
     url = "https://example.com/",
-    logo = "Evercorp",
+    logo = "https://static.wikia.nocookie.net/disney/images/e/e2/BnL.svg",
+    margin,
     role = "CEO",
     description = `Workin' 9 to 5, what a way to make a livin'
     Barely gettin' by, it's all takin' and no givin'
@@ -109,15 +110,17 @@ export default function Job(props) {
       <TimelineContent>
         <Paper elevation={3} className="paper">
           <span className="arrow"></span>
-          <Typography variant="h6" component="h3" className="years">
-            {years}
-          </Typography>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <img src={logo} alt={company} className="logo" />
-          </a>
-          <Typography variant="overline" display="block">
-            {role}
-          </Typography>
+          <Stack sx={margin && { "& img.logo": { margin } }}>
+            <Typography variant="h6" component="h3" className="years">
+              {years}
+            </Typography>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <img src={logo} alt={company} className="logo" />
+            </a>
+            <Typography variant="overline" display="block">
+              {role}
+            </Typography>
+          </Stack>
           <Typography className="description">{description}</Typography>
         </Paper>
       </TimelineContent>
