@@ -57,7 +57,7 @@ const Root = styled("div")(({ theme }) => ({
 
 export default function NavBar(props) {
   const { section } = props;
-  const narrow = window.innerWidth < 600;
+  const narrow = typeof window !== "undefined" && window.innerWidth < 600;
 
   return (
     <Root data-testid="NavBar">

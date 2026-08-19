@@ -40,7 +40,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir build-ssr && node scripts/prerender.mjs",
     "test": "vitest run",
     "lint": "eslint . --ext .js,.jsx",
     "format": "prettier --write .",
@@ -97,6 +97,7 @@
     "ignorePatterns": [
       "**/*.html",
       "build",
+      "build-ssr",
       "coverage",
       "public"
     ]
