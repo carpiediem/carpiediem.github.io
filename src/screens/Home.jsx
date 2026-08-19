@@ -18,6 +18,16 @@ export default function Home() {
   const aboutRef = useRef(null);
 
   useEffect(() => {
+    // The browser's native same-page anchor scroll only fires once, when
+    // the URL is first processed. On first load that happens before React
+    // has rendered the named anchors, so it's a no-op; do it ourselves
+    // once the page has rendered instead.
+    const hash = window.location.hash.slice(1);
+    const target = hash && document.getElementsByName(hash)[0];
+    if (target) target.scrollIntoView();
+  }, []);
+
+  useEffect(() => {
     // MUST BE IN REVERSE ORDER
     const sections = [
       ["education", educationRef],
