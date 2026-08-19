@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Skill from "./Skill";
 import skills from "../content/skills.json";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     maxWidth: 960,
     padding: "0 15px",
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default forwardRef((props, ref) => {
+const Skills = forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
@@ -52,3 +52,6 @@ export default forwardRef((props, ref) => {
     </section>
   );
 });
+Skills.displayName = "Skills";
+
+export default Skills;

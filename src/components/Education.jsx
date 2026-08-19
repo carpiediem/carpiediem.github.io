@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import School from "./School";
 import schools from "../content/schools.json";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     maxWidth: 960,
     padding: "0 15px",
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default forwardRef((props, ref) => {
+const Education = forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
@@ -48,3 +48,6 @@ export default forwardRef((props, ref) => {
     </section>
   );
 });
+Education.displayName = "Education";
+
+export default Education;
