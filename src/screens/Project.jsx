@@ -47,7 +47,10 @@ export default function Project() {
   useEffect(() => {
     let cancelled = false;
     const writeUpKey = `../content/${id}.html`;
-    const hasOwnWriteUp = Object.prototype.hasOwnProperty.call(writeUps, writeUpKey);
+    const hasOwnWriteUp = Object.prototype.hasOwnProperty.call(
+      writeUps,
+      writeUpKey,
+    );
     const candidateLoader = hasOwnWriteUp ? writeUps[writeUpKey] : undefined;
     const loadWriteUp =
       typeof candidateLoader === "function"
