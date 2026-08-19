@@ -1,32 +1,30 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import AboutIcon from "@material-ui/icons/Help";
-import SkillsIcon from "@material-ui/icons/Star";
-import PortfolioIcon from "@material-ui/icons/PhotoLibrary";
-import ExperienceIcon from "@material-ui/icons/Work";
-import EducationIcon from "@material-ui/icons/School";
+import { styled } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import AboutIcon from "@mui/icons-material/Help";
+import SkillsIcon from "@mui/icons-material/Star";
+import PortfolioIcon from "@mui/icons-material/PhotoLibrary";
+import ExperienceIcon from "@mui/icons-material/Work";
+import EducationIcon from "@mui/icons-material/School";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  appbar: {
+const Root = styled("div")(({ theme }) => ({
+  flexGrow: 1,
+  "& .appbar": {
     backgroundColor: "white",
     color: "black",
   },
-  title: {
+  "& .title": {
     flexGrow: 1,
     color: theme.palette.primary.light,
     fontFamily: "'Contrail One', cursive",
     textDecoration: "none",
     "@media only screen and (max-width: 599px)": { marginBottom: -15 },
   },
-  buttonGroup: {
+  "& .buttonGroup": {
     "& a": {
       borderColor: "transparent !important",
       backgroundColor: "transparent !important",
@@ -47,8 +45,10 @@ const useStyles = makeStyles((theme) => ({
     },
     "& > button:hover > span:after": { width: "calc(100% - 16px)" },
   },
-  scrolledTo: { "& > span:after": { width: "calc(100% - 16px) !important" } },
-  atTop: {
+  "& .scrolledTo": {
+    "& > span:after": { width: "calc(100% - 16px) !important" },
+  },
+  "& .atTop": {
     backgroundColor: "transparent",
     color: "rgba(255, 255, 255, 0.7)",
     boxShadow: "none",
@@ -56,69 +56,60 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NavBar(props) {
-  const classes = useStyles();
   const { section } = props;
   const narrow = window.innerWidth < 600;
 
   return (
-    <div className={classes.root} data-testid="NavBar">
-      <AppBar
-        color="transparent"
-        className={section ? classes.appbar : classes.atTop}
-      >
+    <Root data-testid="NavBar">
+      <AppBar color="transparent" className={section ? "appbar" : "atTop"}>
         <Toolbar variant="dense">
-          <Typography
-            variant="h6"
-            component="a"
-            href="/"
-            className={classes.title}
-          >
+          <Typography variant="h6" component="a" href="/" className="title">
             RSLC
           </Typography>
           <ButtonGroup
             variant="text"
             color="primary"
             disableRipple
-            className={classes.buttonGroup}
+            className="buttonGroup"
           >
             <Button
               component="a"
               href="/#about"
-              className={section === "about" && classes.scrolledTo}
+              className={section === "about" && "scrolledTo"}
             >
               {narrow ? <AboutIcon /> : "About"}
             </Button>
             <Button
               component="a"
               href="/#skills"
-              className={section === "skills" && classes.scrolledTo}
+              className={section === "skills" && "scrolledTo"}
             >
               {narrow ? <SkillsIcon /> : "Skills"}
             </Button>
             <Button
               component="a"
               href="/#portfolio"
-              className={section === "portfolio" && classes.scrolledTo}
+              className={section === "portfolio" && "scrolledTo"}
             >
               {narrow ? <PortfolioIcon /> : "Portfolio"}
             </Button>
             <Button
               component="a"
               href="/#experience"
-              className={section === "experience" && classes.scrolledTo}
+              className={section === "experience" && "scrolledTo"}
             >
               {narrow ? <ExperienceIcon /> : "Experience"}
             </Button>
             <Button
               component="a"
               href="/#education"
-              className={section === "education" && classes.scrolledTo}
+              className={section === "education" && "scrolledTo"}
             >
               {narrow ? <EducationIcon /> : "Education"}
             </Button>
           </ButtonGroup>
         </Toolbar>
       </AppBar>
-    </div>
+    </Root>
   );
 }

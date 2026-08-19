@@ -1,41 +1,52 @@
 /* global ga */
 
 import React, { forwardRef } from "react";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Grid from "@material-ui/core/Grid";
-import Icon from "@material-ui/core/Icon";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Tooltip from "@material-ui/core/Tooltip";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Tooltip from "@mui/material/Tooltip";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import Introduction from "./Introduction";
 
-const ColorTooltip = withStyles((theme) => ({
-  tooltip: {
-    backgroundColor: theme.palette.primary.light,
-    color: "rgba(0, 0, 0, 0.87)",
-    boxShadow: theme.shadows[1],
-    fontSize: 11,
-    marginTop: 0,
-  },
-  arrow: { color: theme.palette.primary.light },
-}))(Tooltip);
+function ColorTooltip(props) {
+  return (
+    <Tooltip
+      {...props}
+      slotProps={{
+        tooltip: {
+          sx: (theme) => ({
+            backgroundColor: theme.palette.primary.light,
+            color: "rgba(0, 0, 0, 0.87)",
+            boxShadow: theme.shadows[1],
+            fontSize: 11,
+            marginTop: 0,
+          }),
+        },
+        arrow: {
+          sx: (theme) => ({ color: theme.palette.primary.light }),
+        },
+      }}
+    />
+  );
+}
 
-const useStyles = makeStyles((theme) => ({
-  root: {
+const Root = styled("div")(({ theme }) => ({
+  "& .root": {
     maxWidth: 960,
     padding: "0 15px",
     margin: "auto",
   },
-  background: {
+  "& .background": {
     backgroundSize: "cover",
     backgroundColor: "#242832",
     backgroundRepeat: "no-repeat",
@@ -48,32 +59,29 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     zIndex: -2,
   },
-  fadeToWhite: {
+  "& .fadeToWhite": {
     minHeight: 515,
     width: "100%",
     position: "absolute",
     top: 0,
     zIndex: -1,
-    background: "rgb(255,255,255)",
-    // eslint-disable-next-line no-dupe-keys
     background:
       "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%)",
   },
-  card: {
+  "& .card": {
     margin: "100px auto 0 auto",
     minWidth: 275,
     borderRadius: 0,
     border: "none",
     "& a": { textDecoration: "none", color: "inherit" },
   },
-  content: { padding: "30px 20px 15px 20px", textAlign: "center" },
-  photo: { maxWidth: "100%" },
-  item: {
-    width: "inherit",
+  "& .content": { padding: "30px 20px 15px 20px", textAlign: "center" },
+  "& .photo": { maxWidth: "100%" },
+  "& .item": {
     color: "rgb(61, 68, 81)",
     "& a": { outline: "none" },
   },
-  list: {
+  "& .list": {
     "& li": {
       padding: "4px 0",
       "& span.MuiListItemText-primary": {
@@ -95,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  actions: {
+  "& .actions": {
     backgroundColor: theme.palette.primary.main,
     justifyContent: "center",
     "& a": {
@@ -103,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
       "& svg": { fill: "white" },
     },
   },
-  download: {
+  "& .download": {
     color: "rgb(61, 68, 81)",
     fontSize: 15,
     fontWeight: 700,
@@ -114,29 +122,27 @@ const useStyles = makeStyles((theme) => ({
         "0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)",
     },
   },
-  hello: { color: "black", fontSize: 20, fontWeight: 300 },
+  "& .hello": { color: "black", fontSize: 20, fontWeight: 300 },
 }));
 
 const About = forwardRef((props, ref) => {
-  const classes = useStyles();
-
   const triggerDownloadEvent = () =>
     ga("send", "event", "File", "Download", "Resume");
   const triggerEmailEvent = () =>
     ga("send", "event", "Link", "Click", "Email Address");
 
   return (
-    <React.Fragment>
-      <section ref={ref} className={classes.root} data-testid="About">
-        <Card className={classes.card} variant="outlined">
-          <CardContent className={classes.content}>
+    <Root>
+      <section ref={ref} className="root" data-testid="About">
+        <Card className="card" variant="outlined">
+          <CardContent className="content">
             <Grid container spacing={3}>
-              <Grid item sm={5} className={classes.item}>
+              <Grid size={{ sm: 5 }} className="item">
                 <a name="about" href="#about">
-                  <img alt="" src="/img/ryan.jpg" className={classes.photo} />
+                  <img alt="" src="/img/ryan.jpg" className="photo" />
                 </a>
               </Grid>
-              <Grid item sm={7} className={classes.item}>
+              <Grid size={{ sm: 7 }} className="item">
                 <Introduction
                   name={
                     <React.Fragment>
@@ -154,7 +160,7 @@ const About = forwardRef((props, ref) => {
                   }
                   role="Software Engineer & Entrepreneur"
                 />
-                <List className={classes.list}>
+                <List className="list">
                   <ListItem>
                     <ListItemText
                       primary="Address"
@@ -178,7 +184,7 @@ const About = forwardRef((props, ref) => {
               </Grid>
             </Grid>
           </CardContent>
-          <CardActions className={classes.actions}>
+          <CardActions className="actions">
             <IconButton
               aria-label="LinkedIn"
               component="a"
@@ -212,26 +218,26 @@ const About = forwardRef((props, ref) => {
               <Icon className="fab fa-stack-overflow" />
             </IconButton>
           </CardActions>
-          <CardContent className={classes.content}>
+          <CardContent className="content">
             <Button
               variant="outlined"
               size="large"
               component="a"
               href="/downloads/Resume-Ryan-SL-Carpenter.pdf"
-              className={classes.download}
+              className="download"
               onClick={triggerDownloadEvent}
             >
               Download Resume
             </Button>
-            {/* <Typography className={classes.hello}>
+            {/* <Typography className="hello">
               Do I want an introductory paragraph here?
             </Typography> */}
           </CardContent>
         </Card>
       </section>
-      <div className={classes.fadeToWhite}></div>
-      <div className={classes.background}></div>
-    </React.Fragment>
+      <div className="fadeToWhite"></div>
+      <div className="background"></div>
+    </Root>
   );
 });
 About.displayName = "About";

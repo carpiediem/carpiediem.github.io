@@ -1,18 +1,16 @@
 import React, { forwardRef } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 import Skill from "./Skill";
 import skills from "../content/skills.json";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    maxWidth: 960,
-    padding: "0 15px",
-    margin: "auto",
-  },
-  h2: {
+const Root = styled("section")({
+  maxWidth: 960,
+  padding: "0 15px",
+  margin: "auto",
+  "& .h2": {
     color: "rgb(61, 68, 81)",
     fontSize: "1.88rem",
     fontWeight: 600,
@@ -26,30 +24,27 @@ const useStyles = makeStyles(() => ({
       outline: "none",
     },
   },
-  item: {
-    width: "inherit",
+  "& .item": {
     color: "rgb(61, 68, 81)",
   },
-}));
+});
 
 const Skills = forwardRef((props, ref) => {
-  const classes = useStyles();
-
   return (
-    <section ref={ref} className={classes.root} data-testid="Skills">
-      <Typography variant="h4" component="h2" className={classes.h2}>
+    <Root ref={ref} data-testid="Skills">
+      <Typography variant="h4" component="h2" className="h2">
         <a name="skills" href="#skills">
           Skills
         </a>
       </Typography>
       <Grid container spacing={5}>
         {skills.map((skill) => (
-          <Grid key={skill.name} item sm={4} className={classes.item}>
+          <Grid key={skill.name} size={{ sm: 4 }} className="item">
             <Skill {...skill} />
           </Grid>
         ))}
       </Grid>
-    </section>
+    </Root>
   );
 });
 Skills.displayName = "Skills";
