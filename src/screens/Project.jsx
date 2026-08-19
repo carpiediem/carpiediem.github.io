@@ -56,6 +56,14 @@ export default function Project() {
       typeof candidateLoader === "function"
         ? candidateLoader
         : () => Promise.resolve("<p>TBD</p>");
+    // CodeQL flags this as js/unvalidated-dynamic-method-call - a known
+    // false positive for import.meta.glob() lookups like this one. writeUps
+    // is a closed, build-time-generated object whose values are always glob
+    // loader functions, never anything reachable via prototype pollution or
+    // otherwise unsafe to invoke; the hasOwnProperty + typeof guards above
+    // already rule out calling anything else. This is purely client-side
+    // (id is a URL param the same visitor controls in their own tab), so
+    // there's no privilege boundary being crossed either.
     loadWriteUp().then((html) => {
       if (!cancelled) setContent(html);
     });
