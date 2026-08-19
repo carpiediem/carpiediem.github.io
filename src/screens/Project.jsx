@@ -46,9 +46,13 @@ export default function Project() {
 
   useEffect(() => {
     let cancelled = false;
+    const writeUpKey = `../content/${id}.html`;
+    const hasOwnWriteUp = Object.prototype.hasOwnProperty.call(writeUps, writeUpKey);
+    const candidateLoader = hasOwnWriteUp ? writeUps[writeUpKey] : undefined;
     const loadWriteUp =
-      writeUps[`../content/${id}.html`] ??
-      (() => Promise.resolve("<p>TBD</p>"));
+      typeof candidateLoader === "function"
+        ? candidateLoader
+        : () => Promise.resolve("<p>TBD</p>");
     loadWriteUp().then((html) => {
       if (!cancelled) setContent(html);
     });
