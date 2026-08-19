@@ -1,25 +1,28 @@
 import React from "react";
+import { vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Portfolio from "./Portfolio";
 
-jest.mock("../content/projects.json", () => [
-  {
-    id: "featured-project",
-    img: "/img/featured.png",
-    title: "Featured Project",
-    tags: ["web", "featured"],
-    featured: true,
-    demo: "https://example.com/demo",
-    github: "https://github.com/example/featured-project",
-  },
-  {
-    id: "plain-project",
-    img: "/img/plain.png",
-    title: "Plain Project",
-    featured: false,
-  },
-]);
+vi.mock("../content/projects.json", () => ({
+  default: [
+    {
+      id: "featured-project",
+      img: "/img/featured.png",
+      title: "Featured Project",
+      tags: ["web", "featured"],
+      featured: true,
+      demo: "https://example.com/demo",
+      github: "https://github.com/example/featured-project",
+    },
+    {
+      id: "plain-project",
+      img: "/img/plain.png",
+      title: "Plain Project",
+      featured: false,
+    },
+  ],
+}));
 
 test("renders a featured project with tags, a demo link, and a GitHub link", () => {
   const { getByText, container } = render(
@@ -49,7 +52,7 @@ test("renders a non-featured project without tags, demo, or GitHub links", () =>
 });
 
 test("scrolls to the top when the zoom link is clicked", () => {
-  window.scrollTo = jest.fn();
+  window.scrollTo = vi.fn();
   const { container } = render(
     <MemoryRouter>
       <Portfolio />

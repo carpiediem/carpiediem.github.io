@@ -13,6 +13,12 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import NavBar from "../components/NavBar";
 import projects from "../content/projects.json";
 
+const writeUps = import.meta.glob("../content/*.html", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.primary.main,
@@ -40,13 +46,7 @@ export default function Project() {
 
   const summary = projects.find((p) => p.id === id);
 
-  let content = "<p>TBD</p>";
-
-  try {
-    content = require(`../content/${id}.html`);
-  } catch (err) {
-    console.error(err);
-  }
+  const content = writeUps[`../content/${id}.html`] ?? "<p>TBD</p>";
 
   useEffect(() => {
     const listener = debounce(() => {

@@ -8,14 +8,15 @@ Source for my personal site, live at **[carpiediem.github.io](https://carpiediem
 
 ## Tech stack
 
-- [React](https://react.dev/) 16 + [Create React App](https://github.com/facebook/create-react-app) (via [react-app-rewired](https://github.com/timarney/react-app-rewired))
+- [React](https://react.dev/) 16 + [Vite](https://vite.dev/)
 - [Material-UI](https://v4.mui.com/) v4
 - [React Router](https://v5.reactrouter.com/)
+- [Vitest](https://vitest.dev/) for tests
 - Deployed to GitHub Pages via [gh-pages](https://github.com/tschaub/gh-pages)
 
 ## Getting started
 
-```
+```sh
 npm install
 npm start
 ```
