@@ -50,13 +50,18 @@ export default function Home() {
   });
 
   return (
-    <div data-testid="home">
+    <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <NavBar section={section} />
-      <About ref={aboutRef} />
-      <Skills ref={skillsRef} />
-      <Portfolio ref={portfolioRef} />
-      <Experience ref={experienceRef} />
-      <Education ref={educationRef} />
-    </div>
+      <main id="main-content" data-testid="home">
+        <About ref={aboutRef} />
+        <Skills ref={skillsRef} />
+        <Portfolio ref={portfolioRef} />
+        <Experience ref={experienceRef} />
+        <Education ref={educationRef} />
+      </main>
+    </>
   );
 }

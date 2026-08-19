@@ -30,8 +30,17 @@ const Root = styled("section")({
 
 const Experience = forwardRef((props, ref) => {
   return (
-    <Root ref={ref} data-testid="Experience">
-      <Typography variant="h4" component="h2" className="h2">
+    <Root
+      ref={ref}
+      data-testid="Experience"
+      aria-labelledby="experience-heading"
+    >
+      <Typography
+        variant="h4"
+        component="h2"
+        id="experience-heading"
+        className="h2"
+      >
         <a name="experience" href="#experience">
           Work Experience
         </a>

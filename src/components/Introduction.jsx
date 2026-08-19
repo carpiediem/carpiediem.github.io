@@ -28,7 +28,12 @@ export default function Introduction(props) {
   return (
     <Root>
       {/* <SpeechBubble text={bubble} /> */}
-      <Typography variant="h4" component="h1" className="name">
+      <Typography
+        variant="h4"
+        component="h1"
+        id="about-heading"
+        className="name"
+      >
         {name}
       </Typography>
       <Typography variant="h6" component="h2" className="role">
