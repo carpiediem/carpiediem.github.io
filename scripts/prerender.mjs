@@ -56,6 +56,8 @@ function outputPathFor(url) {
     : path.join(buildDir, url.replace(/^\/+/, ""), "index.html");
 }
 
+const PLACEHOLDER_CONTENT = "<p>TBD</p>";
+
 // Project.jsx loads its write-up text asynchronously (see that file), which
 // renderToString can't wait on - so read the file directly here and hand it
 // to entry-server.jsx to render synchronously as the initial content.
@@ -68,8 +70,36 @@ async function writeUpContentFor(url) {
       "utf-8",
     );
   } catch {
-    return "<p>TBD</p>";
+    return PLACEHOLDER_CONTENT;
   }
+}
+
+const HTML_ENTITIES = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+};
+
+// A plain-text excerpt of a write-up, for use as a meta description -
+// falls back to undefined (letting the caller supply its own default) for
+// placeholder or empty content, which has nothing worth summarizing.
+function descriptionFromWriteUp(html, maxLength = 155) {
+  if (!html || html.trim() === PLACEHOLDER_CONTENT) return undefined;
+
+  const text = html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&([a-z]+);/gi, (entity, name) => HTML_ENTITIES[name] ?? entity)
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return undefined;
+  if (text.length <= maxLength) return text;
+
+  const truncated = text.slice(0, maxLength + 1);
+  const lastSpace = truncated.lastIndexOf(" ");
+  return `${truncated.slice(0, lastSpace > 0 ? lastSpace : maxLength).trimEnd()}…`;
 }
 
 function sitemapFor(urls, siteUrl) {
@@ -90,6 +120,11 @@ async function main() {
     const writeUpContent = await writeUpContentFor(url);
     const appHtml = render(url, { writeUpContent });
     const meta = metaFor(url);
+    const excerpt = descriptionFromWriteUp(writeUpContent);
+    if (excerpt) {
+      meta.description = excerpt;
+      meta.structuredData.description = excerpt;
+    }
 
     const html = template
       .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
