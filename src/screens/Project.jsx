@@ -14,7 +14,6 @@ import NavBar from "../components/NavBar";
 import projects from "../content/projects.json";
 
 const writeUps = import.meta.glob("../content/*.html", {
-  eager: true,
   query: "?raw",
   import: "default",
 });
@@ -43,7 +42,20 @@ export default function Project() {
 
   const summary = projects.find((p) => p.id === id);
 
-  const content = writeUps[`../content/${id}.html`] ?? "<p>TBD</p>";
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+    const loadWriteUp =
+      writeUps[`../content/${id}.html`] ??
+      (() => Promise.resolve("<p>TBD</p>"));
+    loadWriteUp().then((html) => {
+      if (!cancelled) setContent(html);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [id]);
 
   useEffect(() => {
     const listener = debounce(() => {
