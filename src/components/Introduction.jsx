@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 
 // import SpeechBubble from './SpeechBubble';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     paddingBottom: 15,
     borderBottom: "thin solid #ddd",

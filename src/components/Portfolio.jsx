@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default forwardRef((props, ref) => {
+const Portfolio = forwardRef((props, ref) => {
   const classes = useStyles();
 
   const scrollUp = () => window.scrollTo(0, 0);
@@ -165,3 +165,6 @@ export default forwardRef((props, ref) => {
     </section>
   );
 });
+Portfolio.displayName = "Portfolio";
+
+export default Portfolio;
