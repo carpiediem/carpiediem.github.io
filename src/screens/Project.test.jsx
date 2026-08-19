@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { act, render } from "@testing-library/react";
 import { MemoryRouter, Route } from "react-router-dom";
 import Project from "./Project";
@@ -29,7 +30,7 @@ test("includes NavBar component", () => {
 });
 
 test("marks the nav as scrolled once the page is scrolled past the top", () => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   const { getByTestId } = render(
     <MemoryRouter initialEntries={[`/projects/gameofthrones`]}>
@@ -45,27 +46,25 @@ test("marks the nav as scrolled once the page is scrolled past the top", () => {
   setScrollY(100);
   act(() => {
     window.dispatchEvent(new Event("scroll"));
-    jest.advanceTimersByTime(150);
+    vi.advanceTimersByTime(150);
   });
 
   expect(appBar.className).not.toBe(initialClassName);
 
-  jest.useRealTimers();
+  vi.useRealTimers();
 });
 
-test("logs and falls back to placeholder content when no write-up exists for the project", () => {
-  const consoleError = jest
-    .spyOn(console, "error")
-    .mockImplementation(() => {});
-
-  render(
+test("redirects home when no project matches the id", () => {
+  const { queryByTestId } = render(
     <MemoryRouter initialEntries={[`/projects/does-not-exist`]}>
       <Route path="/projects/:id">
         <Project />
       </Route>
+      <Route path="/" exact>
+        <div data-testid="home-redirect" />
+      </Route>
     </MemoryRouter>,
   );
 
-  expect(consoleError).toHaveBeenCalled();
-  consoleError.mockRestore();
+  expect(queryByTestId("home-redirect")).toBeInTheDocument();
 });
