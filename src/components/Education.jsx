@@ -29,8 +29,13 @@ const Root = styled("section")({
 
 const Education = forwardRef((props, ref) => {
   return (
-    <Root ref={ref} data-testid="Education">
-      <Typography variant="h4" component="h2" className="h2">
+    <Root ref={ref} data-testid="Education" aria-labelledby="education-heading">
+      <Typography
+        variant="h4"
+        component="h2"
+        id="education-heading"
+        className="h2"
+      >
         <a name="education" href="#education">
           Education
         </a>

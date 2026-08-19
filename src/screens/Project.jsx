@@ -89,27 +89,32 @@ export default function Project({ initialContent } = {}) {
 
   return (
     <Root>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <NavBar section={scrolled && "not top"} />
-      <Paper className="paper">
+      <Paper component="main" id="main-content" className="paper">
         <Grid container spacing={3}>
           <Grid size={{ sm: 6 }}>
             <img alt={summary.title} src={summary.img} className="img" />
             {summary.demo && (
               <IconButton
-                aria-label="view"
+                aria-label="View live demo"
                 component="a"
                 href={summary.demo}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <LinkIcon />
               </IconButton>
             )}
             {summary.github && (
               <IconButton
-                aria-label="view"
+                aria-label="View source on GitHub"
                 component="a"
                 href={summary.github}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <GitHubIcon />
               </IconButton>

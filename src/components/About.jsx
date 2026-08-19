@@ -133,13 +133,22 @@ const About = forwardRef((props, ref) => {
 
   return (
     <Root>
-      <section ref={ref} className="root" data-testid="About">
+      <section
+        ref={ref}
+        className="root"
+        data-testid="About"
+        aria-labelledby="about-heading"
+      >
         <Card className="card" variant="outlined">
           <CardContent className="content">
             <Grid container spacing={3}>
               <Grid size={{ sm: 5 }} className="item">
                 <a name="about" href="#about">
-                  <img alt="" src="/img/ryan.jpg" className="photo" />
+                  <img
+                    alt="Ryan SL Carpenter"
+                    src="/img/ryan.jpg"
+                    className="photo"
+                  />
                 </a>
               </Grid>
               <Grid size={{ sm: 7 }} className="item">
@@ -190,6 +199,7 @@ const About = forwardRef((props, ref) => {
               component="a"
               href="https://www.linkedin.com/in/ryanscarpenter/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <LinkedInIcon />
             </IconButton>
@@ -198,6 +208,7 @@ const About = forwardRef((props, ref) => {
               component="a"
               href="https://github.com/carpiediem/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <GitHubIcon />
             </IconButton>
@@ -206,6 +217,7 @@ const About = forwardRef((props, ref) => {
               component="a"
               href="https://angel.co/u/ryanslcarpenter"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon className="fab fa-angellist" />
             </IconButton>
@@ -214,6 +226,7 @@ const About = forwardRef((props, ref) => {
               component="a"
               href="https://stackoverflow.com/users/1811952/carpiediem?tab=profile"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon className="fab fa-stack-overflow" />
             </IconButton>

@@ -11,6 +11,14 @@ import PortfolioIcon from "@mui/icons-material/PhotoLibrary";
 import ExperienceIcon from "@mui/icons-material/Work";
 import EducationIcon from "@mui/icons-material/School";
 
+const sections = [
+  { id: "about", label: "About", Icon: AboutIcon },
+  { id: "skills", label: "Skills", Icon: SkillsIcon },
+  { id: "portfolio", label: "Portfolio", Icon: PortfolioIcon },
+  { id: "experience", label: "Experience", Icon: ExperienceIcon },
+  { id: "education", label: "Education", Icon: EducationIcon },
+];
+
 const Root = styled("div")(({ theme }) => ({
   flexGrow: 1,
   "& .appbar": {
@@ -63,51 +71,36 @@ export default function NavBar(props) {
     <Root data-testid="NavBar">
       <AppBar color="transparent" className={section ? "appbar" : "atTop"}>
         <Toolbar variant="dense">
-          <Typography variant="h6" component="a" href="/" className="title">
+          <Typography
+            variant="h6"
+            component="a"
+            href="/"
+            aria-label="Ryan SL Carpenter home"
+            className="title"
+          >
             RSLC
           </Typography>
-          <ButtonGroup
-            variant="text"
-            color="primary"
-            disableRipple
-            className="buttonGroup"
-          >
-            <Button
-              component="a"
-              href="/#about"
-              className={section === "about" ? "scrolledTo" : undefined}
+          <nav aria-label="Main">
+            <ButtonGroup
+              variant="text"
+              color="primary"
+              disableRipple
+              className="buttonGroup"
             >
-              {narrow ? <AboutIcon /> : "About"}
-            </Button>
-            <Button
-              component="a"
-              href="/#skills"
-              className={section === "skills" ? "scrolledTo" : undefined}
-            >
-              {narrow ? <SkillsIcon /> : "Skills"}
-            </Button>
-            <Button
-              component="a"
-              href="/#portfolio"
-              className={section === "portfolio" ? "scrolledTo" : undefined}
-            >
-              {narrow ? <PortfolioIcon /> : "Portfolio"}
-            </Button>
-            <Button
-              component="a"
-              href="/#experience"
-              className={section === "experience" ? "scrolledTo" : undefined}
-            >
-              {narrow ? <ExperienceIcon /> : "Experience"}
-            </Button>
-            <Button
-              component="a"
-              href="/#education"
-              className={section === "education" ? "scrolledTo" : undefined}
-            >
-              {narrow ? <EducationIcon /> : "Education"}
-            </Button>
-          </ButtonGroup>
+              {sections.map(({ id, label, Icon }) => (
+                <Button
+                  key={id}
+                  component="a"
+                  href={`/#${id}`}
+                  aria-label={label}
+                  aria-current={section === id ? "true" : undefined}
+                  className={section === id ? "scrolledTo" : undefined}
+                >
+                  {narrow ? <Icon /> : label}
+                </Button>
+              ))}
+            </ButtonGroup>
+          </nav>
         </Toolbar>
       </AppBar>
     </Root>

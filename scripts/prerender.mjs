@@ -24,6 +24,32 @@ function escapeHtml(text) {
   );
 }
 
+function seoTagsFor({
+  title,
+  description,
+  canonical,
+  image,
+  type,
+  structuredData,
+}) {
+  const tags = [
+    `<link rel="canonical" href="${escapeHtml(canonical)}" />`,
+    `<meta property="og:type" content="${type}" />`,
+    `<meta property="og:title" content="${escapeHtml(title)}" />`,
+    `<meta property="og:description" content="${escapeHtml(description)}" />`,
+    `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
+    `<meta property="og:image" content="${escapeHtml(image)}" />`,
+    `<meta name="twitter:card" content="summary" />`,
+    `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
+    `<meta name="twitter:image" content="${escapeHtml(image)}" />`,
+    // Escape "</" so no field value (e.g. a project title) can prematurely
+    // close this script tag.
+    `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/<\//g, "<\\/")}</script>`,
+  ];
+  return tags.join("\n    ");
+}
+
 function outputPathFor(url) {
   return url === "/"
     ? path.join(buildDir, "index.html")
@@ -46,8 +72,15 @@ async function writeUpContentFor(url) {
   }
 }
 
+function sitemapFor(urls, siteUrl) {
+  const entries = urls
+    .map((url) => `  <url><loc>${siteUrl}${url}</loc></url>`)
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
+}
+
 async function main() {
-  const { render, routes, metaFor } = await import(
+  const { render, routes, metaFor, SITE_URL } = await import(
     path.join(rootDir, "build-ssr", "entry-server.js")
   );
 
@@ -56,20 +89,26 @@ async function main() {
   for (const url of routes()) {
     const writeUpContent = await writeUpContentFor(url);
     const appHtml = render(url, { writeUpContent });
-    const { title, description } = metaFor(url);
+    const meta = metaFor(url);
 
     const html = template
       .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
-      .replace(/<title>.*<\/title>/, `<title>${escapeHtml(title)}</title>`)
+      .replace(/<title>.*<\/title>/, `<title>${escapeHtml(meta.title)}</title>`)
       .replace(
         /<meta name="description" content="[^"]*" \/>/,
-        `<meta name="description" content="${escapeHtml(description)}" />`,
-      );
+        `<meta name="description" content="${escapeHtml(meta.description)}" />`,
+      )
+      .replace("</head>", `    ${seoTagsFor(meta)}\n  </head>`);
 
     const outputPath = outputPathFor(url);
     await mkdir(path.dirname(outputPath), { recursive: true });
     await writeFile(outputPath, html);
   }
+
+  await writeFile(
+    path.join(buildDir, "sitemap.xml"),
+    sitemapFor(routes(), SITE_URL),
+  );
 
   console.log(`Prerendered ${routes().length} routes.`);
 }

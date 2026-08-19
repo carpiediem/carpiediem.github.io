@@ -84,8 +84,13 @@ const Portfolio = forwardRef((props, ref) => {
   const scrollUp = () => window.scrollTo(0, 0);
 
   return (
-    <Root ref={ref} data-testid="Portfolio">
-      <Typography variant="h4" component="h2" className="h2">
+    <Root ref={ref} data-testid="Portfolio" aria-labelledby="portfolio-heading">
+      <Typography
+        variant="h4"
+        component="h2"
+        id="portfolio-heading"
+        className="h2"
+      >
         <a name="portfolio" href="#portfolio">
           Portfolio
         </a>
@@ -125,6 +130,7 @@ const Portfolio = forwardRef((props, ref) => {
                       component={Link}
                       to={`/projects/${tile.id}`}
                       onClick={scrollUp}
+                      aria-label={`View details for ${tile.title}`}
                     >
                       <ZoomIcon />
                     </Button>
@@ -135,6 +141,7 @@ const Portfolio = forwardRef((props, ref) => {
                         href={tile.demo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`View live demo of ${tile.title}`}
                       >
                         <LinkIcon />
                       </Button>
@@ -146,6 +153,7 @@ const Portfolio = forwardRef((props, ref) => {
                         href={tile.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`View source for ${tile.title} on GitHub`}
                       >
                         <GitHubIcon />
                       </Button>
