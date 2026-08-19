@@ -1,0 +1,23 @@
+var e=`<p>
+  After one too many treks through unfamiliar areas in Hong Kong, it is useful
+  to know the locations of cross-harbour taxi stands. Although other mobile apps
+  map out the location of cross-harbour taxi stands, I wanted to improve the
+  user interface.
+</p>
+<p>
+  Cross-Harbour taxi stands are locations where passengers can ride between Hong
+  Kong Island and Kowloon and only need to pay for the tunnel fee one-way. If
+  they grab a cab on the street or at a normal taxi stand, riders are
+  responsible to pay for the driver's tunnel fee for the trip back as well. In
+  addition, taxis are divided into three groups by geography and given different
+  colors. My app helps users filter more than 400 taxi stands by both of these
+  criteria and get directions from their current location to whichever stand
+  they prefer. The interface can be switched back and forth from English to
+  Chinese.
+</p>
+<p>
+  If the user is not near a taxi stand, the app presents a few options. It has
+  phone numbers for all the taxi depots in Hong Kong, as well as links to other
+  mobile apps that can help the user bring a taxi to them.
+</p>
+`;export{e as default};

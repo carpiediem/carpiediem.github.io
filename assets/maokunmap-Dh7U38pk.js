@@ -1,0 +1,39 @@
+var e=`<p>
+  The
+  <a href="https://en.wikipedia.org/wiki/Mao_Kun_map" target="_blank"
+    >Mao Kun map</a
+  >
+  is the oldest Chinese document showing a large part of the world outside
+  China. It is largely based on the voyages of Zheng He during the Ming Dynasty.
+  As an intersection between history, cartography, and my current home, Hong
+  Kong, I am fascinated by the map, but it is very difficult to use. The map was
+  originally printed on 18 sheets of paper, read right to left from Nanjing to
+  Hormuz. I decided to build a website for the map once I discovered
+  <a href="https://barbierilow.faculty.history.ucsb.edu/?p=764" target="_blank"
+    >a copy made in image tiles</a
+  >, ready for digital mapping.
+</p>
+<p>
+  I created a map editing tool in React.js and Leaflet.js. I advertised it in
+  various online communities interested in Chinese history, in order to
+  crowd-source the transcription and translation of the map. Volunteers click on
+  a map label, then enter its text, translation, and (if known) modern name in a
+  small form. In this way, all 551 plotted locations were transcribed, along
+  with a few dozen long strings of navigation instructions. I researched many
+  historical references to identify as many locations as possible, including
+  latitude and longitude of each point.
+</p>
+<p>
+  With this data compiled, I generated a geoJSON file with all the details to
+  plot on both the Mao Kun map and a modern projection of the globe. In the
+  "explore" version of the website, these maps are presented one above the
+  other. Dragging the Mao Kun map causes the modern map to automatically pan
+  toward the equivalent view. Clicking on a marker in one map, highlights its
+  twin in the other. Each marker links to Wikipedia articles related to the
+  place in question.
+</p>
+<p>
+  At the top, a colorful mini-map shows the entire Mao Kun map at once, with
+  colors corresponding to the borders of modern provinces and nations.
+</p>
+`;export{e as default};
