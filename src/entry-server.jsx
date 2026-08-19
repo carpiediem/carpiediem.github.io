@@ -14,13 +14,18 @@ import projects from "./content/projects.json";
 // is only ever loaded once per prerendered route by scripts/prerender.mjs,
 // never shipped to the browser, so there's no bundle-size cost to eagerly
 // importing everything.
-export function render(url) {
+//
+// writeUpContent is passed in as initialContent for Project, since that
+// screen loads its write-up text asynchronously (see Project.jsx) -
+// renderToString can't wait on that either, so scripts/prerender.mjs reads
+// the write-up file directly and hands it to us to render synchronously.
+export function render(url, { writeUpContent } = {}) {
   return renderToString(
     <ThemeProvider theme={theme}>
       <StaticRouter location={url}>
         <Switch>
           <Route path="/projects/:id">
-            <Project />
+            <Project initialContent={writeUpContent} />
           </Route>
           <Route path="/">
             <Home />

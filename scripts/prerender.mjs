@@ -30,6 +30,22 @@ function outputPathFor(url) {
     : path.join(buildDir, url.replace(/^\/+/, ""), "index.html");
 }
 
+// Project.jsx loads its write-up text asynchronously (see that file), which
+// renderToString can't wait on - so read the file directly here and hand it
+// to entry-server.jsx to render synchronously as the initial content.
+async function writeUpContentFor(url) {
+  const match = url.match(/^\/projects\/(.+)$/);
+  if (!match) return undefined;
+  try {
+    return await readFile(
+      path.join(rootDir, "src", "content", `${match[1]}.html`),
+      "utf-8",
+    );
+  } catch {
+    return "<p>TBD</p>";
+  }
+}
+
 async function main() {
   const { render, routes, metaFor } = await import(
     path.join(rootDir, "build-ssr", "entry-server.js")
@@ -38,7 +54,8 @@ async function main() {
   const template = await readFile(path.join(buildDir, "index.html"), "utf-8");
 
   for (const url of routes()) {
-    const appHtml = render(url);
+    const writeUpContent = await writeUpContentFor(url);
+    const appHtml = render(url, { writeUpContent });
     const { title, description } = metaFor(url);
 
     const html = template

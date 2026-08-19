@@ -36,15 +36,19 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Project() {
+export default function Project({ initialContent } = {}) {
   const { id } = useParams();
   const [scrolled, setScrolled] = useState(false);
 
   const summary = projects.find((p) => p.id === id);
 
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState(initialContent ?? "");
 
   useEffect(() => {
+    // initialContent is only ever passed by the SSR entry (see
+    // entry-server.jsx), which already has the real write-up text - no
+    // need to fetch it again client-side for the route the page loaded on.
+    if (initialContent !== undefined) return;
     let cancelled = false;
     const writeUpKey = `../content/${id}.html`;
     const hasOwnWriteUp = Object.prototype.hasOwnProperty.call(
@@ -70,7 +74,7 @@ export default function Project() {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [id, initialContent]);
 
   useEffect(() => {
     const listener = debounce(() => {
