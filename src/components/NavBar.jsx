@@ -75,35 +75,35 @@ export default function NavBar(props) {
             <Button
               component="a"
               href="/#about"
-              className={section === "about" && "scrolledTo"}
+              className={section === "about" ? "scrolledTo" : undefined}
             >
               {narrow ? <AboutIcon /> : "About"}
             </Button>
             <Button
               component="a"
               href="/#skills"
-              className={section === "skills" && "scrolledTo"}
+              className={section === "skills" ? "scrolledTo" : undefined}
             >
               {narrow ? <SkillsIcon /> : "Skills"}
             </Button>
             <Button
               component="a"
               href="/#portfolio"
-              className={section === "portfolio" && "scrolledTo"}
+              className={section === "portfolio" ? "scrolledTo" : undefined}
             >
               {narrow ? <PortfolioIcon /> : "Portfolio"}
             </Button>
             <Button
               component="a"
               href="/#experience"
-              className={section === "experience" && "scrolledTo"}
+              className={section === "experience" ? "scrolledTo" : undefined}
             >
               {narrow ? <ExperienceIcon /> : "Experience"}
             </Button>
             <Button
               component="a"
               href="/#education"
-              className={section === "education" && "scrolledTo"}
+              className={section === "education" ? "scrolledTo" : undefined}
             >
               {narrow ? <EducationIcon /> : "Education"}
             </Button>
