@@ -1,11 +1,12 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Home from "./screens/Home";
-import Project from "./screens/Project";
+
+const Project = lazy(() => import("./screens/Project"));
 
 function App() {
   // https://coolors.co/006d77-83c5be-edf6f9-ffddd2-e29578
@@ -36,7 +37,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/projects/:id">
-            <Project />
+            <Suspense fallback={null}>
+              <Project />
+            </Suspense>
           </Route>
           <Route path="/">
             <Home />

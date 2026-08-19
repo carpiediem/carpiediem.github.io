@@ -8,8 +8,8 @@ Source for my personal site, live at **[carpiediem.github.io](https://carpiediem
 
 ## Tech stack
 
-- [React](https://react.dev/) 16 + [Vite](https://vite.dev/)
-- [Material-UI](https://v4.mui.com/) v4
+- [React](https://react.dev/) 18 + [Vite](https://vite.dev/)
+- [MUI](https://mui.com/) v9
 - [React Router](https://v5.reactrouter.com/)
 - [Vitest](https://vitest.dev/) for tests
 - Deployed to GitHub Pages via [gh-pages](https://github.com/tschaub/gh-pages)
@@ -21,7 +21,7 @@ npm install
 npm start
 ```
 
-Runs the app locally at [http://localhost:3000](http://localhost:3000).
+Runs the app locally at [http://localhost:5173](http://localhost:5173).
 
 Other scripts:
 
@@ -40,7 +40,7 @@ To add a portfolio project, add an entry to `projects.json` and drop the corresp
 
 ## Acknowledgements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The RScard designs of [PXlab](https://rscard.px-lab.com/) were a big inspiration.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and later migrated to [Vite](https://vite.dev/). The RScard designs of [PXlab](https://rscard.px-lab.com/) were a big inspiration.
 
 ## License
 

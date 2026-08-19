@@ -14,7 +14,6 @@ import NavBar from "../components/NavBar";
 import projects from "../content/projects.json";
 
 const writeUps = import.meta.glob("../content/*.html", {
-  eager: true,
   query: "?raw",
   import: "default",
 });
@@ -43,7 +42,35 @@ export default function Project() {
 
   const summary = projects.find((p) => p.id === id);
 
-  const content = writeUps[`../content/${id}.html`] ?? "<p>TBD</p>";
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+    const writeUpKey = `../content/${id}.html`;
+    const hasOwnWriteUp = Object.prototype.hasOwnProperty.call(
+      writeUps,
+      writeUpKey,
+    );
+    const candidateLoader = hasOwnWriteUp ? writeUps[writeUpKey] : undefined;
+    const loadWriteUp =
+      typeof candidateLoader === "function"
+        ? candidateLoader
+        : () => Promise.resolve("<p>TBD</p>");
+    // CodeQL flags this as js/unvalidated-dynamic-method-call - a known
+    // false positive for import.meta.glob() lookups like this one. writeUps
+    // is a closed, build-time-generated object whose values are always glob
+    // loader functions, never anything reachable via prototype pollution or
+    // otherwise unsafe to invoke; the hasOwnProperty + typeof guards above
+    // already rule out calling anything else. This is purely client-side
+    // (id is a URL param the same visitor controls in their own tab), so
+    // there's no privilege boundary being crossed either.
+    loadWriteUp().then((html) => {
+      if (!cancelled) setContent(html);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [id]);
 
   useEffect(() => {
     const listener = debounce(() => {
