@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
   hello: { color: "black", fontSize: 20, fontWeight: 300 },
 }));
 
-export default forwardRef((props, ref) => {
+const About = forwardRef((props, ref) => {
   const classes = useStyles();
 
   const triggerDownloadEvent = () =>
@@ -234,3 +234,6 @@ export default forwardRef((props, ref) => {
     </React.Fragment>
   );
 });
+About.displayName = "About";
+
+export default About;
