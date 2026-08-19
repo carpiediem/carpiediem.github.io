@@ -78,7 +78,6 @@ const Root = styled("div")(({ theme }) => ({
   "& .content": { padding: "30px 20px 15px 20px", textAlign: "center" },
   "& .photo": { maxWidth: "100%" },
   "& .item": {
-    width: "inherit",
     color: "rgb(61, 68, 81)",
     "& a": { outline: "none" },
   },

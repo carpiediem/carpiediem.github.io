@@ -25,7 +25,6 @@ const Root = styled("section")({
     },
   },
   "& .item": {
-    width: "inherit",
     color: "rgb(61, 68, 81)",
   },
 });
