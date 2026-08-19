@@ -1,27 +1,24 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 // import SpeechBubble from './SpeechBubble';
 
-const useStyles = makeStyles(() => ({
-  root: {
-    paddingBottom: 15,
-    borderBottom: "thin solid #ddd",
-    textAlign: "left",
-    "@media (max-width: 599px)": {
-      textAlign: "center",
-    },
+const Root = styled("div")({
+  paddingBottom: 15,
+  borderBottom: "thin solid #ddd",
+  textAlign: "left",
+  "@media (max-width: 599px)": {
+    textAlign: "center",
   },
-  name: {
+  "& .name": {
     fontWeight: 700,
     "& > span.thin": { fontWeight: 300 },
   },
-  role: { fontWeight: 400 },
-}));
+  "& .role": { fontWeight: 400 },
+});
 
 export default function Introduction(props) {
-  const classes = useStyles();
   const {
     // bubble = 'Hey, there',
     name = "John Smith",
@@ -29,14 +26,14 @@ export default function Introduction(props) {
   } = props;
 
   return (
-    <div className={classes.root}>
+    <Root>
       {/* <SpeechBubble text={bubble} /> */}
-      <Typography variant="h4" component="h1" className={classes.name}>
+      <Typography variant="h4" component="h1" className="name">
         {name}
       </Typography>
-      <Typography variant="h6" component="h2" className={classes.role}>
+      <Typography variant="h6" component="h2" className="role">
         {role}
       </Typography>
-    </div>
+    </Root>
   );
 }

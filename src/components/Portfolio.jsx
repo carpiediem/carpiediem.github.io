@@ -1,26 +1,24 @@
 import React, { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
-import Typography from "@material-ui/core/Typography";
-import ZoomIcon from "@material-ui/icons/ZoomIn";
-import LinkIcon from "@material-ui/icons/Link";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import Typography from "@mui/material/Typography";
+import ZoomIcon from "@mui/icons-material/ZoomIn";
+import LinkIcon from "@mui/icons-material/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 // import Skill from './Skill';
 import projects from "../content/projects.json";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 960,
-    padding: "0 15px",
-    margin: "auto",
-    marginBottom: 100,
-  },
-  h2: {
+const Root = styled("section")(({ theme }) => ({
+  maxWidth: 960,
+  padding: "0 15px",
+  margin: "auto",
+  marginBottom: 100,
+  "& .h2": {
     color: "rgb(61, 68, 81)",
     fontSize: "1.88rem",
     fontWeight: 600,
@@ -34,20 +32,20 @@ const useStyles = makeStyles((theme) => ({
       outline: "none",
     },
   },
-  gridList: {
+  "& .gridList": {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
   },
-  tile: {
-    "& .MuiGridListTileBar-titleWrap": {
+  "& .tile": {
+    "& .MuiImageListItemBar-titleWrap": {
       marginTop: 175,
       transition: "all 0.25s ease-out",
     },
-    "&:hover .MuiGridListTileBar-titleWrap": {
+    "&:hover .MuiImageListItemBar-titleWrap": {
       marginTop: 0,
     },
   },
-  tileBar: {
+  "& .tileBar": {
     transform: "translate(0, 55px)",
     background:
       "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%)",
@@ -77,37 +75,35 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  icon: {
+  "& .icon": {
     color: "white",
   },
 }));
 
 const Portfolio = forwardRef((props, ref) => {
-  const classes = useStyles();
-
   const scrollUp = () => window.scrollTo(0, 0);
 
   return (
-    <section ref={ref} className={classes.root} data-testid="Portfolio">
-      <Typography variant="h4" component="h2" className={classes.h2}>
+    <Root ref={ref} data-testid="Portfolio">
+      <Typography variant="h4" component="h2" className="h2">
         <a name="portfolio" href="#portfolio">
           Portfolio
         </a>
       </Typography>
-      <GridList cellHeight={300} spacing={15} className={classes.gridList}>
+      <ImageList rowHeight={300} gap={15} cols={2} className="gridList">
         {projects.map((tile) => (
-          <GridListTile
+          <ImageListItem
             key={tile.img}
             cols={tile.featured ? 2 : 1}
             rows={tile.featured ? 2 : 1}
             component="article"
-            className={classes.tile}
+            className="tile"
             // component={Link}
             // to={`/projects/${tile.id}`}
             // onClick={scrollUp}
           >
             <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
+            <ImageListItemBar
               title={
                 <React.Fragment>
                   <h3>{tile.title}</h3>
@@ -157,12 +153,12 @@ const Portfolio = forwardRef((props, ref) => {
                   </div>
                 </React.Fragment>
               }
-              className={classes.tileBar}
+              className="tileBar"
             />
-          </GridListTile>
+          </ImageListItem>
         ))}
-      </GridList>
-    </section>
+      </ImageList>
+    </Root>
   );
 });
 Portfolio.displayName = "Portfolio";

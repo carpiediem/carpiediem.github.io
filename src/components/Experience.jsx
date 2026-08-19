@@ -1,19 +1,17 @@
 import React, { forwardRef } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Timeline from "@material-ui/lab/Timeline";
-import Typography from "@material-ui/core/Typography";
+import { styled } from "@mui/material/styles";
+import Timeline from "@mui/lab/Timeline";
+import Typography from "@mui/material/Typography";
 
 import Job from "./Job";
 import jobs from "../content/jobs.json";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    maxWidth: 960,
-    padding: "0 15px",
-    margin: "auto",
-    "@media only screen and (min-width: 600px)": { marginBottom: -980 },
-  },
-  h2: {
+const Root = styled("section")({
+  maxWidth: 960,
+  padding: "0 15px",
+  margin: "auto",
+  "@media only screen and (min-width: 600px)": { marginBottom: -980 },
+  "& .h2": {
     color: "rgb(61, 68, 81)",
     // outline: 'none',
     fontSize: "1.88rem",
@@ -28,14 +26,12 @@ const useStyles = makeStyles(() => ({
       outline: "none",
     },
   },
-}));
+});
 
 const Experience = forwardRef((props, ref) => {
-  const classes = useStyles();
-
   return (
-    <section ref={ref} className={classes.root} data-testid="Experience">
-      <Typography variant="h4" component="h2" className={classes.h2}>
+    <Root ref={ref} data-testid="Experience">
+      <Typography variant="h4" component="h2" className="h2">
         <a name="experience" href="#experience">
           Work Experience
         </a>
@@ -46,7 +42,7 @@ const Experience = forwardRef((props, ref) => {
           <Job key={job.years} {...job} />
         ))}
       </Timeline>
-    </section>
+    </Root>
   );
 });
 Experience.displayName = "Experience";

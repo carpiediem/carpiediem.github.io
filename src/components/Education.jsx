@@ -1,19 +1,17 @@
 import React, { forwardRef } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Timeline from "@material-ui/lab/Timeline";
-import Typography from "@material-ui/core/Typography";
+import { styled } from "@mui/material/styles";
+import Timeline from "@mui/lab/Timeline";
+import Typography from "@mui/material/Typography";
 
 import School from "./School";
 import schools from "../content/schools.json";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    maxWidth: 960,
-    padding: "0 15px",
-    margin: "auto",
-    marginBottom: -400,
-  },
-  h2: {
+const Root = styled("section")({
+  maxWidth: 960,
+  padding: "0 15px",
+  margin: "auto",
+  marginBottom: -400,
+  "& .h2": {
     color: "rgb(61, 68, 81)",
     fontSize: "1.88rem",
     fontWeight: 600,
@@ -27,14 +25,12 @@ const useStyles = makeStyles(() => ({
       outline: "none",
     },
   },
-}));
+});
 
 const Education = forwardRef((props, ref) => {
-  const classes = useStyles();
-
   return (
-    <section ref={ref} className={classes.root} data-testid="Education">
-      <Typography variant="h4" component="h2" className={classes.h2}>
+    <Root ref={ref} data-testid="Education">
+      <Typography variant="h4" component="h2" className="h2">
         <a name="education" href="#education">
           Education
         </a>
@@ -45,7 +41,7 @@ const Education = forwardRef((props, ref) => {
           <School key={school.years} {...school} />
         ))}
       </Timeline>
-    </section>
+    </Root>
   );
 });
 Education.displayName = "Education";

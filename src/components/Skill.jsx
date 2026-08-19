@@ -1,21 +1,19 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
-import Typography from "@material-ui/core/Typography";
-// import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { styled } from "@mui/material/styles";
+import Icon from "@mui/material/Icon";
+import Typography from "@mui/material/Typography";
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > .MuiIcon-root": {
-      display: "block",
-      margin: "0 auto 20px auto",
-      color: theme.palette.secondary.main,
-      fontSize: "5rem",
-      width: "auto",
-      textAlign: "center",
-    },
+const Root = styled("div")(({ theme }) => ({
+  "& > .MuiIcon-root": {
+    display: "block",
+    margin: "0 auto 20px auto",
+    color: theme.palette.secondary.main,
+    fontSize: "5rem",
+    width: "auto",
+    textAlign: "center",
   },
-  name: {
+  "& .name": {
     fontSize: 20,
     fontWeight: 400,
     textAlign: "center",
@@ -26,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Skill(props) {
-  const classes = useStyles();
   const {
     iconClass = "far fa-lightbulb",
     name = "Skill",
@@ -34,10 +31,10 @@ export default function Skill(props) {
   } = props; // eslint-disable-line no-unused-vars
 
   return (
-    <div className={classes.root}>
+    <Root>
       <Icon className={iconClass} />
-      <Typography className={classes.name}>{name}</Typography>
-      <Typography className={classes.description}>{description}</Typography>
-    </div>
+      <Typography className="name">{name}</Typography>
+      <Typography className="description">{description}</Typography>
+    </Root>
   );
 }

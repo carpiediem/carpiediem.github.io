@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import debounce from "lodash/debounce";
-import { makeStyles } from "@material-ui/core/styles";
-// import ButtonGroup from '@material-ui/core/ButtonGroup';
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import LinkIcon from "@material-ui/icons/Link";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { styled } from "@mui/material/styles";
+// import ButtonGroup from '@mui/material/ButtonGroup';
+import IconButton from "@mui/material/IconButton";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import LinkIcon from "@mui/icons-material/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import NavBar from "../components/NavBar";
 import projects from "../content/projects.json";
@@ -19,28 +19,25 @@ const writeUps = import.meta.glob("../content/*.html", {
   import: "default",
 });
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.primary.main,
-    height: "calc(100vh - 50px)",
-    paddingTop: 50,
-  },
-  paper: {
+const Root = styled("div")(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  height: "calc(100vh - 50px)",
+  paddingTop: 50,
+  "& .paper": {
     width: 1200,
     maxWidth: "calc(100% - 80px)",
     padding: 25,
     margin: "auto",
   },
-  img: { maxWidth: "100%" },
-  title: { fontSize: 30, fontWeight: 700 },
-  content: {
+  "& .img": { maxWidth: "100%" },
+  "& .title": { fontSize: 30, fontWeight: 700 },
+  "& .content": {
     color: "#666",
     "& a": { color: theme.palette.primary.light, textDecoration: "none" },
   },
 }));
 
 export default function Project() {
-  const classes = useStyles();
   const { id } = useParams();
   const [scrolled, setScrolled] = useState(false);
 
@@ -60,16 +57,12 @@ export default function Project() {
   if (!summary) return <Redirect to="/" />;
 
   return (
-    <div className={classes.root}>
+    <Root>
       <NavBar section={scrolled && "not top"} />
-      <Paper className={classes.paper}>
+      <Paper className="paper">
         <Grid container spacing={3}>
-          <Grid item sm={6} className={classes.item}>
-            <img
-              alt={summary.title}
-              src={summary.img}
-              className={classes.img}
-            />
+          <Grid size={{ sm: 6 }}>
+            <img alt={summary.title} src={summary.img} className="img" />
             {summary.demo && (
               <IconButton
                 aria-label="view"
@@ -91,17 +84,17 @@ export default function Project() {
               </IconButton>
             )}
           </Grid>
-          <Grid item sm={6} className={classes.item}>
-            <Typography variant="h4" component="h1" className={classes.title}>
+          <Grid size={{ sm: 6 }}>
+            <Typography variant="h4" component="h1" className="title">
               {summary.title}
             </Typography>
             <section
               dangerouslySetInnerHTML={{ __html: content }}
-              className={classes.content}
+              className="content"
             />
           </Grid>
         </Grid>
       </Paper>
-    </div>
+    </Root>
   );
 }
