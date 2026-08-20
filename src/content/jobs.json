@@ -1,11 +1,21 @@
 [
   {
+    "years": "2022 - 2026",
+    "company": "Shopventory",
+    "url": "https://shopventory.com/",
+    "logo": "https://shopventory.com/wp-content/uploads/2022/02/Shopventory_Primary-Logo-Full-Color.svg",
+    "role": "Senior Software Engineer",
+    "description": "Served as the de facto frontend lead, owning architectural decisions across the codebase and running substantive code reviews that raised team-wide quality and consistency. Led the migration from legacy AngularJS pages to a maintainable, customer-friendly React front-end, and mentored our Python developers through the transition without being prescriptive. Proactively monitored customer feedback channels, translating issues into well-scoped tickets that closed the loop between user experience and engineering response. Helped lead a gradual shift in company culture toward a broader vision of product management."
+  },
+  {
     "years": "2020 - 2022",
     "company": "Easyship",
     "url": "https://www.easyship.com/",
     "logo": "https://www.easyship.com/icons/easyship-logo.svg",
     "role": "Lead Frontend Developer",
-    "description": "Managed our frontend team as we expanded both our product offerings and global market share. Grew the team from a single office to span three continents. Spearheaded efforts to internationalize our apps, migrate from AngularJS to React.js, and improve performance across the board. Helped Easyship triple the number of shipments sold on the platform, growing net sales by 35%."
+    "description": "Managed our frontend team as we expanded both our product offerings and global market share. Grew the team from a single office to span three continents. Spearheaded efforts to internationalize our apps, migrate from AngularJS to React.js, and improve performance across the board. Helped Easyship triple the number of shipments sold on the platform, growing net sales by 35%.",
+    "side": "right",
+    "offset": -300
   },
   {
     "years": "2017 - 2020",
