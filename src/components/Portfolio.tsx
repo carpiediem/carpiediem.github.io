@@ -11,7 +11,10 @@ import LinkIcon from "@mui/icons-material/Link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 // import Skill from './Skill';
-import projects from "../content/projects.json";
+import projectsData from "../content/projects.json";
+import type { ProjectSummary } from "../content/types";
+
+const projects = projectsData as ProjectSummary[];
 
 const Root = styled("section")(({ theme }) => ({
   maxWidth: 960,
@@ -81,7 +84,7 @@ const Root = styled("section")(({ theme }) => ({
   },
 }));
 
-const Portfolio = forwardRef((props, ref) => {
+const Portfolio = forwardRef<HTMLElement>((_props, ref) => {
   const scrollUp = () => window.scrollTo(0, 0);
 
   return (
@@ -92,7 +95,7 @@ const Portfolio = forwardRef((props, ref) => {
         id="portfolio-heading"
         className="h2"
       >
-        <a name="portfolio" href="#portfolio">
+        <a id="portfolio" href="#portfolio">
           Portfolio
         </a>
       </Typography>

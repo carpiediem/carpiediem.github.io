@@ -1,6 +1,6 @@
 // Renders every route to static HTML after the client build, so GitHub
 // Pages serves real content (crawlers, no-JS clients, first paint)
-// instead of an empty <div id="root">. src/index.jsx hydrates this markup
+// instead of an empty <div id="root">. src/index.tsx hydrates this markup
 // in place rather than re-rendering from scratch.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -57,9 +57,9 @@ function outputPathFor(url) {
 
 const PLACEHOLDER_CONTENT = "<p>TBD</p>";
 
-// Project.jsx loads its write-up text asynchronously (see that file), which
+// Project.tsx loads its write-up text asynchronously (see that file), which
 // renderToString can't wait on - so read the file directly here and hand it
-// to entry-server.jsx to render synchronously as the initial content.
+// to entry-server.tsx to render synchronously as the initial content.
 async function writeUpContentFor(url) {
   const match = url.match(/^\/projects\/(.+)$/);
   if (!match) return undefined;
@@ -125,7 +125,7 @@ async function main() {
       meta.structuredData.description = excerpt;
     }
 
-    // Project.jsx's write-up content loads asynchronously client-side (see
+    // Project.tsx's write-up content loads asynchronously client-side (see
     // that file), which would otherwise start empty on the client's first
     // render - a real hydration mismatch against this prerendered markup,
     // not just a redundant fetch. Embedding it here lets the client's

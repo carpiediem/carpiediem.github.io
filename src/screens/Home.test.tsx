@@ -1,4 +1,3 @@
-import React from "react";
 import { vi } from "vitest";
 import { act, render, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
@@ -42,14 +41,15 @@ test("updates the active nav section when the page is scrolled", () => {
   const educationButton = within(getByTestId("NavBar"))
     .getByText("Education")
     .closest("a");
-  const initialClassName = educationButton.className;
+  expect(educationButton).toBeInTheDocument();
+  const initialClassName = educationButton!.className;
 
   act(() => {
     window.dispatchEvent(new Event("scroll"));
     vi.advanceTimersByTime(150);
   });
 
-  expect(educationButton.className).not.toBe(initialClassName);
+  expect(educationButton!.className).not.toBe(initialClassName);
 
   vi.useRealTimers();
 });

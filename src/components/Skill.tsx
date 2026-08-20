@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "@mui/material/styles";
 import Icon from "@mui/material/Icon";
 import Typography from "@mui/material/Typography";
@@ -23,13 +22,17 @@ const Root = styled("div")(({ theme }) => ({
   // description: { textAlign: 'justify' },
 }));
 
-export default function Skill(props) {
-  const {
-    iconClass = "far fa-lightbulb",
-    name = "Skill",
-    description = "I am awesome.",
-  } = props; // eslint-disable-line no-unused-vars
+interface SkillProps {
+  iconClass?: string;
+  name?: string;
+  description?: string;
+}
 
+export default function Skill({
+  iconClass = "far fa-lightbulb",
+  name = "Skill",
+  description = "I am awesome.",
+}: SkillProps) {
   return (
     <Root>
       <Icon className={iconClass} />

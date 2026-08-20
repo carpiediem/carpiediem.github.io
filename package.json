@@ -30,6 +30,13 @@
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.5",
+    "@types/lodash": "^4.17.25",
+    "@types/node": "^26.2.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.67.0",
+    "@typescript-eslint/parser": "^8.67.0",
     "@vitejs/plugin-react": "^6.0.5",
     "@vitest/coverage-v8": "^4.0.0",
     "eslint": "^8.57.1",
@@ -37,14 +44,16 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "jsdom": "^28.0.0",
     "prettier": "3.9.6",
+    "typescript": "^5.9.3",
     "vite": "^8.2.1",
     "vitest": "^4.0.0"
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir build-ssr && node scripts/prerender.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir build-ssr && node scripts/prerender.mjs",
     "test": "vitest run",
-    "lint": "eslint . --ext .js,.jsx",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "predeploy": "npm run build",
@@ -81,7 +90,9 @@
       {
         "files": [
           "**/*.test.js",
-          "**/*.test.jsx"
+          "**/*.test.jsx",
+          "**/*.test.ts",
+          "**/*.test.tsx"
         ],
         "globals": {
           "test": "readonly",
@@ -93,6 +104,21 @@
           "beforeAll": "readonly",
           "afterAll": "readonly",
           "vi": "readonly"
+        }
+      },
+      {
+        "files": [
+          "**/*.ts",
+          "**/*.tsx"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "rules": {
+          "no-unused-vars": "off",
+          "@typescript-eslint/no-unused-vars": "error",
+          "no-undef": "off"
         }
       }
     ],

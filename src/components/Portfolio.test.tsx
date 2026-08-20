@@ -1,4 +1,3 @@
-import React from "react";
 import { vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
@@ -31,7 +30,7 @@ test("renders a featured project with tags, a demo link, and a GitHub link", () 
     </MemoryRouter>,
   );
   expect(getByText("Featured Project")).toBeInTheDocument();
-  expect(container.querySelector(".tags").textContent).toBe("featured, web");
+  expect(container.querySelector(".tags")?.textContent).toBe("featured, web");
   expect(
     container.querySelector('a[href="https://example.com/demo"]'),
   ).toBeInTheDocument();
@@ -59,9 +58,11 @@ test("scrolls to the top when the zoom link is clicked", () => {
     </MemoryRouter>,
   );
 
-  fireEvent.click(
-    container.querySelector('a[href="/projects/featured-project"]'),
+  const zoomLink = container.querySelector(
+    'a[href="/projects/featured-project"]',
   );
+  expect(zoomLink).toBeInTheDocument();
+  fireEvent.click(zoomLink!);
 
   expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
 });

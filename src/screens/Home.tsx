@@ -9,13 +9,13 @@ import Experience from "../components/Experience";
 import Education from "../components/Education";
 
 export default function Home() {
-  const [section, setSection] = useState(null);
+  const [section, setSection] = useState<string | null>(null);
 
-  const educationRef = useRef(null);
-  const experienceRef = useRef(null);
-  const portfolioRef = useRef(null);
-  const skillsRef = useRef(null);
-  const aboutRef = useRef(null);
+  const educationRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
+  const portfolioRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // The browser's native same-page anchor scroll only fires once, when
@@ -29,20 +29,20 @@ export default function Home() {
 
   useEffect(() => {
     // MUST BE IN REVERSE ORDER
-    const sections = [
+    const sections: [string, React.RefObject<HTMLElement | null>][] = [
       ["education", educationRef],
       ["experience", experienceRef],
       ["portfolio", portfolioRef],
       ["skills", skillsRef],
       ["about", aboutRef],
     ];
-    const breakpoints = sections.map(([key, ref]) => [
+    const breakpoints: [string, number][] = sections.map(([key, ref]) => [
       key,
-      window.scrollY + ref.current.getBoundingClientRect().top,
+      window.scrollY + (ref.current?.getBoundingClientRect().top ?? 0),
     ]);
     const listener = debounce(() => {
       const section = breakpoints.find(([, y]) => window.scrollY + 99 >= y);
-      setSection(section && section[0]);
+      setSection(section ? section[0] : null);
     }, 100);
 
     window.addEventListener("scroll", listener);

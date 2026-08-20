@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -8,6 +7,8 @@ import TimelineContent from "@mui/lab/TimelineContent";
 // import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
+
+import type { School as SchoolData } from "../content/types";
 
 const Root = styled(TimelineItem)(({ theme }) => ({
   flexDirection: "row-reverse",
@@ -90,7 +91,7 @@ const Root = styled(TimelineItem)(({ theme }) => ({
   "& .school": { color: "#757575", textDecoration: "none" },
 }));
 
-export default function School(props) {
+export default function School(props: Partial<SchoolData>) {
   const {
     years = "THEN - NOW",
     school = "School of Hard Knocks",
@@ -122,7 +123,7 @@ export default function School(props) {
           </Typography>
           <Typography
             variant="overline"
-            display="block"
+            sx={{ display: "block" }}
             component="a"
             href={url}
             target="_blank"

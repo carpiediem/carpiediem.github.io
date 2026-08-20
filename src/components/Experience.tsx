@@ -1,10 +1,13 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { styled } from "@mui/material/styles";
 import Timeline from "@mui/lab/Timeline";
 import Typography from "@mui/material/Typography";
 
 import Job from "./Job";
-import jobs from "../content/jobs.json";
+import jobsData from "../content/jobs.json";
+import type { Job as JobData } from "../content/types";
+
+const jobs = jobsData as JobData[];
 
 const Root = styled("section")({
   maxWidth: 960,
@@ -28,7 +31,7 @@ const Root = styled("section")({
   },
 });
 
-const Experience = forwardRef((props, ref) => {
+const Experience = forwardRef<HTMLElement>((_props, ref) => {
   return (
     <Root
       ref={ref}
@@ -41,12 +44,12 @@ const Experience = forwardRef((props, ref) => {
         id="experience-heading"
         className="h2"
       >
-        <a name="experience" href="#experience">
+        <a id="experience" href="#experience">
           Work Experience
         </a>
       </Typography>
 
-      <Timeline align="alternate">
+      <Timeline position="alternate">
         {jobs.map((job) => (
           <Job key={job.years} {...job} />
         ))}

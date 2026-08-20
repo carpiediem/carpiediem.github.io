@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import { vi } from "vitest";
 import App from "./App";
@@ -16,7 +15,7 @@ test("renders Home screen, by default", () => {
 // throwing. This checks for that failure class specifically, rather
 // than requiring zero console output, since unrelated deprecation
 // warnings are expected noise on older dependency versions.
-function expectNoInvalidElementTypeErrors(path) {
+function expectNoInvalidElementTypeErrors(path: string) {
   const spy = vi.spyOn(console, "error").mockImplementation(() => {});
   window.history.pushState({}, "", path);
   render(<App />);

@@ -1,10 +1,13 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { styled } from "@mui/material/styles";
 import Timeline from "@mui/lab/Timeline";
 import Typography from "@mui/material/Typography";
 
 import School from "./School";
-import schools from "../content/schools.json";
+import schoolsData from "../content/schools.json";
+import type { School as SchoolData } from "../content/types";
+
+const schools = schoolsData as SchoolData[];
 
 const Root = styled("section")({
   maxWidth: 960,
@@ -27,7 +30,7 @@ const Root = styled("section")({
   },
 });
 
-const Education = forwardRef((props, ref) => {
+const Education = forwardRef<HTMLElement>((_props, ref) => {
   return (
     <Root ref={ref} data-testid="Education" aria-labelledby="education-heading">
       <Typography
@@ -36,12 +39,12 @@ const Education = forwardRef((props, ref) => {
         id="education-heading"
         className="h2"
       >
-        <a name="education" href="#education">
+        <a id="education" href="#education">
           Education
         </a>
       </Typography>
 
-      <Timeline align="alternate">
+      <Timeline position="alternate">
         {schools.map((school) => (
           <School key={school.years} {...school} />
         ))}

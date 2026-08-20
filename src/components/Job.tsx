@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
@@ -8,6 +7,8 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
+
+import type { Job as JobData } from "../content/types";
 
 const Root = styled(TimelineItem)(({ theme }) => ({
   flexDirection: "row-reverse",
@@ -84,7 +85,7 @@ const Root = styled(TimelineItem)(({ theme }) => ({
   },
 }));
 
-export default function Job(props) {
+export default function Job(props: Partial<JobData>) {
   const {
     years = "THEN - NOW",
     company = "Evercorp",
@@ -110,14 +111,14 @@ export default function Job(props) {
       <TimelineContent>
         <Paper elevation={3} className="paper">
           <span className="arrow"></span>
-          <Stack sx={margin && { "& img.logo": { margin } }}>
+          <Stack sx={margin ? { "& img.logo": { margin } } : undefined}>
             <Typography variant="h6" component="h3" className="years">
               {years}
             </Typography>
             <a href={url} target="_blank" rel="noopener noreferrer">
               <img src={logo} alt={company} className="logo" />
             </a>
-            <Typography variant="overline" display="block">
+            <Typography variant="overline" sx={{ display: "block" }}>
               {role}
             </Typography>
           </Stack>

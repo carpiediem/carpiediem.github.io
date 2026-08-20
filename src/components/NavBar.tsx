@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -63,7 +63,11 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function NavBar(props) {
+interface NavBarProps {
+  section?: string | false | null;
+}
+
+export default function NavBar(props: NavBarProps) {
   const { section } = props;
   const [narrow, setNarrow] = useState(false);
 
