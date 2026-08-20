@@ -3,9 +3,6 @@ name: Continuous Deployment
 on:
   push:
     branches: [main]
-  pull_request:
-    types: [closed]
-    branches: [main]
 
 permissions:
   contents: read
