@@ -1,0 +1,48 @@
+name: Accessibility Scanner
+
+# Manual trigger only: this action files GitHub issues (and can open PRs via
+# Copilot) for whatever it finds, so it shouldn't run unattended on every
+# push. Run it from the Actions tab when you want a fresh scan.
+# https://github.com/github/accessibility-scanner
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  list_urls:
+    runs-on: ubuntu-latest
+    outputs:
+      urls: ${{ steps.list.outputs.urls }}
+    steps:
+      - name: List URLs from the deployed sitemap
+        id: list
+        run: |
+          urls="$(curl -fsSL https://carpiediem.github.io/sitemap.xml | grep -o '<loc>[^<]*</loc>' | sed 's/<loc>//;s#</loc>##')"
+          {
+            echo "urls<<EOF"
+            echo "$urls"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+  accessibility_scanner:
+    needs: list_urls
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: github/accessibility-scanner@v3
+        with:
+          urls: ${{ needs.list_urls.outputs.urls }}
+          repository: ${{ github.repository }}
+          # A fine-grained PAT with contents:write, issues:write,
+          # pull-requests:write, actions:write, and metadata:read on this
+          # repo, added as a repository secret. The default GITHUB_TOKEN
+          # can't be used here. See the action's README for details:
+          # https://github.com/github/accessibility-scanner#2-create-a-token-and-add-a-secret
+          token: ${{ secrets.A11Y_SCANNER_TOKEN }}
+          cache_key: a11y-scan-results-carpiediem.github.io.json
+          include_screenshots: true
+          # Set to true if this repo doesn't have GitHub Copilot enabled,
+          # to skip auto-assigning filed issues to it.
+          # skip_copilot_assignment: true
