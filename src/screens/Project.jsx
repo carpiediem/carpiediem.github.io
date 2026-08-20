@@ -32,7 +32,7 @@ const Root = styled("div")(({ theme }) => ({
   "& .title": { fontSize: 30, fontWeight: 700 },
   "& .content": {
     color: "#666",
-    "& a": { color: theme.palette.primary.light, textDecoration: "none" },
+    "& a": { color: theme.palette.primary.main, textDecoration: "none" },
   },
 }));
 

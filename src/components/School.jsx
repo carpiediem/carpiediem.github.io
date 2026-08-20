@@ -75,7 +75,7 @@ const Root = styled(TimelineItem)(({ theme }) => ({
     marginBottom: 0,
     fontSize: 16,
     fontWeight: 700,
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.main,
   },
   "& .degree": {
     fontSize: 22,
@@ -83,7 +83,7 @@ const Root = styled(TimelineItem)(({ theme }) => ({
     marginTop: 5,
     marginBottom: 20,
   },
-  "& .school": { color: "rgb(135, 135, 135)", textDecoration: "none" },
+  "& .school": { color: "#757575", textDecoration: "none" },
 }));
 
 export default function School(props) {

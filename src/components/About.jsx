@@ -90,7 +90,7 @@ const Root = styled("div")(({ theme }) => ({
         textTransform: "uppercase",
       },
       "& p.MuiListItemText-secondary": {
-        color: "#9da0a7",
+        color: "#757575",
         fontSize: 15,
         fontWeight: 400,
         "& a": { color: "inherit", textDecoration: "none" },
@@ -154,18 +154,13 @@ const About = forwardRef((props, ref) => {
               <Grid size={{ sm: 7 }} className="item">
                 <Introduction
                   name={
-                    <React.Fragment>
-                      {/* <span className="thin">I'm </span> */}
+                    <>
                       Ryan{" "}
-                      <ColorTooltip
-                        arrow
-                        title="Scott Luong"
-                        placement="bottom"
-                      >
+                      <ColorTooltip arrow title="Scott Luong" placement="top">
                         <span>SL</span>
                       </ColorTooltip>{" "}
                       Carpenter
-                    </React.Fragment>
+                    </>
                   }
                   role="Software Engineer & Entrepreneur"
                 />

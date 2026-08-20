@@ -75,7 +75,7 @@ const Root = styled(TimelineItem)(({ theme }) => ({
     marginBottom: 0,
     fontSize: 16,
     fontWeight: 700,
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.main,
   },
   "& .logo": { width: 200, maxWidth: "100%", margin: "15px 0" },
   "& .description": {
