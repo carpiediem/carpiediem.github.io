@@ -40,7 +40,11 @@ const Root = styled(TimelineItem)(({ theme }) => ({
   },
   "&.color-secondary": {
     "& .MuiPaper-root": { borderColor: theme.palette.secondary.main },
-    "& h3": { color: theme.palette.secondary.light },
+    // secondary.light (#ffddd2) on this card's white background is
+    // ~1.27:1 contrast, and even secondary.main (#e29578) only reaches
+    // ~2.39:1 - both well under WCAG AA's 4.5:1 for normal text. #b04c26
+    // keeps the same hue, darkened to clear it at ~5.37:1.
+    "& h3": { color: "#b04c26" },
   },
   "& .dot": { zIndex: 2 },
   "& .paper": {
