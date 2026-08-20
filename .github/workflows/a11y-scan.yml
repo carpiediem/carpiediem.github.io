@@ -54,6 +54,12 @@ jobs:
           token: ${{ secrets.A11Y_SCANNER_TOKEN }}
           cache_key: a11y-scan-results-carpiediem.github.io.json
           include_screenshots: true
+          # One issue per violated rule, aggregating every occurrence across
+          # every scanned page (e.g. all "color-contrast" findings become a
+          # single issue), instead of the default of one issue per
+          # individual violation. Use "rule+url" instead for one issue per
+          # rule per page.
+          group_by: rule
           # Set to true if this repo doesn't have GitHub Copilot enabled,
           # to skip auto-assigning filed issues to it.
           # skip_copilot_assignment: true
