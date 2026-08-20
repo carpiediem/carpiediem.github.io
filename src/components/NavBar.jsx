@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -65,7 +65,14 @@ const Root = styled("div")(({ theme }) => ({
 
 export default function NavBar(props) {
   const { section } = props;
-  const narrow = typeof window !== "undefined" && window.innerWidth < 600;
+  const [narrow, setNarrow] = useState(false);
+
+  useEffect(() => {
+    const listener = () => setNarrow(window.innerWidth < 600);
+    listener();
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
+  }, []);
 
   return (
     <Root data-testid="NavBar">

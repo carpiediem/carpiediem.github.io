@@ -102,7 +102,6 @@ const Portfolio = forwardRef((props, ref) => {
             key={tile.img}
             cols={tile.featured ? 2 : 1}
             rows={tile.featured ? 2 : 1}
-            component="article"
             className="tile"
             // component={Link}
             // to={`/projects/${tile.id}`}

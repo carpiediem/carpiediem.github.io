@@ -1,8 +1,7 @@
 // Renders every route to static HTML after the client build, so GitHub
 // Pages serves real content (crawlers, no-JS clients, first paint)
-// instead of an empty <div id="root">. The client bundle still boots
-// and takes over normally once it loads - see src/entry-server.jsx for
-// why this doesn't attempt real hydration.
+// instead of an empty <div id="root">. src/index.jsx hydrates this markup
+// in place rather than re-rendering from scratch.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -118,7 +117,7 @@ async function main() {
 
   for (const url of routes()) {
     const writeUpContent = await writeUpContentFor(url);
-    const appHtml = render(url, { writeUpContent });
+    const { html: appHtml, styleTags } = render(url, { writeUpContent });
     const meta = metaFor(url);
     const excerpt = descriptionFromWriteUp(writeUpContent);
     if (excerpt) {
@@ -126,14 +125,30 @@ async function main() {
       meta.structuredData.description = excerpt;
     }
 
+    // Project.jsx's write-up content loads asynchronously client-side (see
+    // that file), which would otherwise start empty on the client's first
+    // render - a real hydration mismatch against this prerendered markup,
+    // not just a redundant fetch. Embedding it here lets the client's
+    // first render match exactly.
+    const match = url.match(/^\/projects\/(.+)$/);
+    const initialContentScript = match
+      ? `<script>window.__INITIAL_CONTENT__=${JSON.stringify({ id: match[1], html: writeUpContent }).replace(/<\//g, "<\\/")}</script>\n    `
+      : "";
+
     const html = template
-      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+      .replace(
+        '<div id="root"></div>',
+        `<div id="root">${appHtml}</div>\n    ${initialContentScript}`,
+      )
       .replace(/<title>.*<\/title>/, `<title>${escapeHtml(meta.title)}</title>`)
       .replace(
         /<meta name="description" content="[^"]*" \/>/,
         `<meta name="description" content="${escapeHtml(meta.description)}" />`,
       )
-      .replace("</head>", `    ${seoTagsFor(meta)}\n  </head>`);
+      .replace(
+        "</head>",
+        `    ${seoTagsFor(meta)}\n    ${styleTags}\n  </head>`,
+      );
 
     const outputPath = outputPathFor(url);
     await mkdir(path.dirname(outputPath), { recursive: true });

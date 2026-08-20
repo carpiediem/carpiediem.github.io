@@ -19,8 +19,9 @@ const writeUps = import.meta.glob("../content/*.html", {
 
 const Root = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
-  height: "calc(100vh - 50px)",
+  height: "100%",
   paddingTop: 50,
+  paddingBottom: 50,
   "& .paper": {
     width: 1200,
     maxWidth: "calc(100% - 80px)",
@@ -41,13 +42,25 @@ export default function Project({ initialContent } = {}) {
 
   const summary = projects.find((p) => p.id === id);
 
-  const [content, setContent] = useState(initialContent ?? "");
+  const embedded =
+    typeof window !== "undefined" && window.__INITIAL_CONTENT__?.id === id
+      ? window.__INITIAL_CONTENT__.html
+      : undefined;
+
+  const [content, setContent] = useState(initialContent ?? embedded ?? "");
 
   useEffect(() => {
     // initialContent is only ever passed by the SSR entry (see
-    // entry-server.jsx), which already has the real write-up text - no
-    // need to fetch it again client-side for the route the page loaded on.
-    if (initialContent !== undefined) return;
+    // entry-server.jsx). embedded is scripts/prerender.mjs's client-side
+    // copy of the same content, keyed by id, so the client's first render
+    // matches what the server sent instead of starting empty - which
+    // would otherwise be a real hydration mismatch, not just a redundant
+    // fetch. Either way, there's no need to fetch it again client-side for
+    // the route the page loaded on.
+    if (initialContent !== undefined || embedded !== undefined) {
+      delete window.__INITIAL_CONTENT__;
+      return;
+    }
     let cancelled = false;
     const writeUpKey = `../content/${id}.html`;
     const hasOwnWriteUp = Object.prototype.hasOwnProperty.call(
@@ -73,7 +86,7 @@ export default function Project({ initialContent } = {}) {
     return () => {
       cancelled = true;
     };
-  }, [id, initialContent]);
+  }, [id, initialContent, embedded]);
 
   useEffect(() => {
     const listener = debounce(() => {
