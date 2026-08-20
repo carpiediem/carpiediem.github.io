@@ -18,13 +18,16 @@ const Root = styled("div")({
   "& .role": { fontWeight: 400 },
 });
 
-export default function Introduction(props) {
-  const {
-    // bubble = 'Hey, there',
-    name = "John Smith",
-    role = "Human Person",
-  } = props;
+interface IntroductionProps {
+  // bubble?: React.ReactNode;
+  name?: React.ReactNode;
+  role?: React.ReactNode;
+}
 
+export default function Introduction({
+  name = "John Smith",
+  role = "Human Person",
+}: IntroductionProps) {
   return (
     <Root>
       {/* <SpeechBubble text={bubble} /> */}

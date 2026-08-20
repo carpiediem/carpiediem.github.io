@@ -1,4 +1,3 @@
-import React from "react";
 import { renderToString } from "react-dom/server";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
@@ -9,12 +8,36 @@ import { ThemeProvider } from "@mui/material/styles";
 import Home from "./screens/Home";
 import Project from "./screens/Project";
 import { theme } from "./theme";
-import projects from "./content/projects.json";
+import projectsData from "./content/projects.json";
+import type { ProjectSummary } from "./content/types";
+
+const projects = projectsData as ProjectSummary[];
 
 export const SITE_URL = "https://carpiediem.github.io";
 const PERSON_NAME = "Ryan SL Carpenter";
 
-function absoluteUrl(urlOrPath) {
+interface StructuredData {
+  "@context": string;
+  "@type": string;
+  name: string;
+  url: string;
+  image: string;
+  description?: string;
+  jobTitle?: string;
+  sameAs?: string[];
+  author?: { "@type": string; name: string; url: string };
+}
+
+export interface Meta {
+  title: string;
+  description: string;
+  canonical: string;
+  image: string;
+  type: "website" | "article";
+  structuredData: StructuredData;
+}
+
+function absoluteUrl(urlOrPath: string) {
   return urlOrPath.startsWith("http") ? urlOrPath : `${SITE_URL}${urlOrPath}`;
 }
 
@@ -36,7 +59,10 @@ function absoluteUrl(urlOrPath) {
 // there (it looks for them in <head>) and treats as a hydration mismatch.
 // "css" matches emotion's own default cache key, which MUI's styled()
 // uses automatically on the client with no CacheProvider needed there.
-export function render(url, { writeUpContent } = {}) {
+export function render(
+  url: string,
+  { writeUpContent }: { writeUpContent?: string } = {},
+) {
   const cache = createCache({ key: "css" });
   const { extractCriticalToChunks, constructStyleTagsFromChunks } =
     createEmotionServer(cache);
@@ -67,7 +93,7 @@ export function routes() {
   return ["/", ...projects.map((project) => `/projects/${project.id}`)];
 }
 
-export function metaFor(url) {
+export function metaFor(url: string): Meta {
   const canonical = absoluteUrl(url);
   const match = url.match(/^\/projects\/(.+)$/);
   const project = match && projects.find((p) => p.id === match[1]);

@@ -1,10 +1,9 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import NavBar from "./NavBar";
 
 const originalInnerWidth = window.innerWidth;
 
-function setInnerWidth(width) {
+function setInnerWidth(width: number) {
   Object.defineProperty(window, "innerWidth", {
     configurable: true,
     writable: true,

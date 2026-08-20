@@ -1,10 +1,9 @@
-import React from "react";
 import { vi } from "vitest";
 import { act, render } from "@testing-library/react";
 import { MemoryRouter, Route } from "react-router-dom";
 import Project from "./Project";
 
-function setScrollY(value) {
+function setScrollY(value: number) {
   Object.defineProperty(window, "scrollY", {
     configurable: true,
     writable: true,
@@ -40,8 +39,9 @@ test("marks the nav as scrolled once the page is scrolled past the top", () => {
     </MemoryRouter>,
   );
 
-  const appBar = getByTestId("NavBar").firstChild;
-  const initialClassName = appBar.className;
+  const appBar = getByTestId("NavBar").firstChild as HTMLElement | null;
+  expect(appBar).toBeInTheDocument();
+  const initialClassName = appBar!.className;
 
   setScrollY(100);
   act(() => {
@@ -49,7 +49,7 @@ test("marks the nav as scrolled once the page is scrolled past the top", () => {
     vi.advanceTimersByTime(150);
   });
 
-  expect(appBar.className).not.toBe(initialClassName);
+  expect(appBar!.className).not.toBe(initialClassName);
 
   vi.useRealTimers();
 });

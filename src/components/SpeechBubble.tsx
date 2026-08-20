@@ -31,8 +31,11 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function SpeechBubble(props) {
-  const { text } = props;
+interface SpeechBubbleProps {
+  text?: React.ReactNode;
+}
+
+export default function SpeechBubble({ text }: SpeechBubbleProps) {
   return (
     <Root>
       <span>{text}</span>

@@ -1,6 +1,4 @@
-/* global ga */
-
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -12,13 +10,13 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import Tooltip from "@mui/material/Tooltip";
+import Tooltip, { type TooltipProps } from "@mui/material/Tooltip";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import Introduction from "./Introduction";
 
-function ColorTooltip(props) {
+function ColorTooltip(props: TooltipProps) {
   return (
     <Tooltip
       {...props}
@@ -125,11 +123,11 @@ const Root = styled("div")(({ theme }) => ({
   "& .hello": { color: "black", fontSize: 20, fontWeight: 300 },
 }));
 
-const About = forwardRef((props, ref) => {
+const About = forwardRef<HTMLElement>((_props, ref) => {
   const triggerDownloadEvent = () =>
-    ga("send", "event", "File", "Download", "Resume");
+    window.ga?.("send", "event", "File", "Download", "Resume");
   const triggerEmailEvent = () =>
-    ga("send", "event", "Link", "Click", "Email Address");
+    window.ga?.("send", "event", "Link", "Click", "Email Address");
 
   return (
     <Root>
@@ -143,7 +141,7 @@ const About = forwardRef((props, ref) => {
           <CardContent className="content">
             <Grid container spacing={3}>
               <Grid size={{ sm: 5 }} className="item">
-                <a name="about" href="#about">
+                <a id="about" href="#about">
                   <img
                     alt="Ryan SL Carpenter"
                     src="/img/ryan.jpg"

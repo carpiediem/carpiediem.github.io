@@ -1,10 +1,13 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import Skill from "./Skill";
-import skills from "../content/skills.json";
+import skillsData from "../content/skills.json";
+import type { Skill as SkillData } from "../content/types";
+
+const skills = skillsData as SkillData[];
 
 const Root = styled("section")({
   maxWidth: 960,
@@ -29,7 +32,7 @@ const Root = styled("section")({
   },
 });
 
-const Skills = forwardRef((props, ref) => {
+const Skills = forwardRef<HTMLElement>((_props, ref) => {
   return (
     <Root ref={ref} data-testid="Skills" aria-labelledby="skills-heading">
       <Typography
@@ -38,7 +41,7 @@ const Skills = forwardRef((props, ref) => {
         id="skills-heading"
         className="h2"
       >
-        <a name="skills" href="#skills">
+        <a id="skills" href="#skills">
           Skills
         </a>
       </Typography>

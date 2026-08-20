@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import debounce from "lodash/debounce";
 import { styled } from "@mui/material/styles";
@@ -10,9 +10,12 @@ import LinkIcon from "@mui/icons-material/Link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import NavBar from "../components/NavBar";
-import projects from "../content/projects.json";
+import projectsData from "../content/projects.json";
+import type { ProjectSummary } from "../content/types";
 
-const writeUps = import.meta.glob("../content/*.html", {
+const projects = projectsData as ProjectSummary[];
+
+const writeUps = import.meta.glob<string>("../content/*.html", {
   query: "?raw",
   import: "default",
 });
@@ -36,8 +39,12 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Project({ initialContent } = {}) {
-  const { id } = useParams();
+interface ProjectProps {
+  initialContent?: string;
+}
+
+export default function Project({ initialContent }: ProjectProps = {}) {
+  const { id } = useParams<{ id: string }>();
   const [scrolled, setScrolled] = useState(false);
 
   const summary = projects.find((p) => p.id === id);
