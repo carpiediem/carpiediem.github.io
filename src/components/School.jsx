@@ -75,7 +75,10 @@ const Root = styled(TimelineItem)(({ theme }) => ({
     marginBottom: 0,
     fontSize: 16,
     fontWeight: 700,
-    color: theme.palette.primary.light,
+    // primary.light (#83c5be) on this card's white background is ~1.96:1
+    // contrast, well under WCAG AA's 4.5:1 for normal text. primary.main
+    // holds the same teal identity at ~6:1.
+    color: theme.palette.primary.main,
   },
   "& .degree": {
     fontSize: 22,
@@ -83,7 +86,9 @@ const Root = styled(TimelineItem)(({ theme }) => ({
     marginTop: 5,
     marginBottom: 20,
   },
-  "& .school": { color: "rgb(135, 135, 135)", textDecoration: "none" },
+  // rgb(135, 135, 135) on white is ~3.59:1, under WCAG AA's 4.5:1 for
+  // normal text. #757575 (already used for Job's .description) is ~4.61:1.
+  "& .school": { color: "#757575", textDecoration: "none" },
 }));
 
 export default function School(props) {

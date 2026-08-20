@@ -90,7 +90,10 @@ const Root = styled("div")(({ theme }) => ({
         textTransform: "uppercase",
       },
       "& p.MuiListItemText-secondary": {
-        color: "#9da0a7",
+        // #9da0a7 on white is ~2.62:1, well under WCAG AA's 4.5:1 for
+        // normal text. #757575 (already used elsewhere for muted text) is
+        // ~4.61:1.
+        color: "#757575",
         fontSize: 15,
         fontWeight: 400,
         "& a": { color: "inherit", textDecoration: "none" },

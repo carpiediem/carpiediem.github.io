@@ -32,7 +32,10 @@ const Root = styled("div")(({ theme }) => ({
   "& .title": { fontSize: 30, fontWeight: 700 },
   "& .content": {
     color: "#666",
-    "& a": { color: theme.palette.primary.light, textDecoration: "none" },
+    // primary.light (#83c5be) on this card's white background is ~1.96:1
+    // contrast, well under WCAG AA's 4.5:1 for normal text. primary.main
+    // holds the same teal identity at ~6:1.
+    "& a": { color: theme.palette.primary.main, textDecoration: "none" },
   },
 }));
 
