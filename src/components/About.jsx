@@ -90,9 +90,6 @@ const Root = styled("div")(({ theme }) => ({
         textTransform: "uppercase",
       },
       "& p.MuiListItemText-secondary": {
-        // #9da0a7 on white is ~2.62:1, well under WCAG AA's 4.5:1 for
-        // normal text. #757575 (already used elsewhere for muted text) is
-        // ~4.61:1.
         color: "#757575",
         fontSize: 15,
         fontWeight: 400,
@@ -157,18 +154,13 @@ const About = forwardRef((props, ref) => {
               <Grid size={{ sm: 7 }} className="item">
                 <Introduction
                   name={
-                    <React.Fragment>
-                      {/* <span className="thin">I'm </span> */}
+                    <>
                       Ryan{" "}
-                      <ColorTooltip
-                        arrow
-                        title="Scott Luong"
-                        placement="bottom"
-                      >
+                      <ColorTooltip arrow title="Scott Luong" placement="top">
                         <span>SL</span>
                       </ColorTooltip>{" "}
                       Carpenter
-                    </React.Fragment>
+                    </>
                   }
                   role="Software Engineer & Entrepreneur"
                 />

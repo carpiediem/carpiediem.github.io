@@ -75,9 +75,6 @@ const Root = styled(TimelineItem)(({ theme }) => ({
     marginBottom: 0,
     fontSize: 16,
     fontWeight: 700,
-    // primary.light (#83c5be) on this card's white background is ~1.96:1
-    // contrast, well under WCAG AA's 4.5:1 for normal text. primary.main
-    // holds the same teal identity at ~6:1.
     color: theme.palette.primary.main,
   },
   "& .logo": { width: 200, maxWidth: "100%", margin: "15px 0" },
