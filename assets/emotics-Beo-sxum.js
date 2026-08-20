@@ -13,6 +13,7 @@ var e=`<p>
 <img
   src="/img/emotics-tech-stack.png"
   style="float: right; height: 10em; margin: 0 0 5px 5px"
+  alt="Diagram of the Emotics AWS architecture: a load balancer routing to EC2 instances across two availability zones, backed by RDS, with CloudFront serving the console front-end"
 />
 
 <p>

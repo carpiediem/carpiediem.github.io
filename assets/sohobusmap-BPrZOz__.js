@@ -15,7 +15,11 @@ var e=`<p>
 <a
   href="http://www.tfl.gov.uk/gettingaround/maps/buses/kensington-chelsea.aspx"
 >
-  <img src="/img/nottinghill.png" style="float: right; padding: 5px" />
+  <img
+    src="/img/nottinghill.png"
+    style="float: right; padding: 5px"
+    alt="Transport for London bus spider map for the area around Notting Hill Gate"
+  />
 </a>
 <p>
   Peter's work made me think that Hong Kong might be good place to implement
@@ -56,7 +60,11 @@ var e=`<p>
   I would love to see a map like this made for each MTR station and posted on
   the wall. It would fill in an important information gap for passengers.
 </p>
-<img src="/img/centralMTRmap.jpg" style="float: right; padding: 5px" />
+<img
+  src="/img/centralMTRmap.jpg"
+  style="float: right; padding: 5px"
+  alt="Photo of an MTR station's exit and street map signage board"
+/>
 <ul>
   <li>
     <a
