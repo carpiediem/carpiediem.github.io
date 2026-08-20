@@ -1,5 +1,8 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
+import createEmotionServer from "@emotion/server/create-instance";
 import { StaticRouter, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 
@@ -26,21 +29,38 @@ function absoluteUrl(urlOrPath) {
 // screen loads its write-up text asynchronously (see Project.jsx) -
 // renderToString can't wait on that either, so scripts/prerender.mjs reads
 // the write-up file directly and hands it to us to render synchronously.
+//
+// The emotion cache/extraction dance is required for the client's
+// hydrateRoot to succeed: without it, emotion inserts <style> tags inline
+// in the render tree during SSR, which the client doesn't expect to find
+// there (it looks for them in <head>) and treats as a hydration mismatch.
+// "css" matches emotion's own default cache key, which MUI's styled()
+// uses automatically on the client with no CacheProvider needed there.
 export function render(url, { writeUpContent } = {}) {
-  return renderToString(
-    <ThemeProvider theme={theme}>
-      <StaticRouter location={url}>
-        <Switch>
-          <Route path="/projects/:id">
-            <Project initialContent={writeUpContent} />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </StaticRouter>
-    </ThemeProvider>,
+  const cache = createCache({ key: "css" });
+  const { extractCriticalToChunks, constructStyleTagsFromChunks } =
+    createEmotionServer(cache);
+
+  const html = renderToString(
+    <CacheProvider value={cache}>
+      <ThemeProvider theme={theme}>
+        <StaticRouter location={url}>
+          <Switch>
+            <Route path="/projects/:id">
+              <Project initialContent={writeUpContent} />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </StaticRouter>
+      </ThemeProvider>
+    </CacheProvider>,
   );
+
+  const styleTags = constructStyleTagsFromChunks(extractCriticalToChunks(html));
+
+  return { html, styleTags };
 }
 
 export function routes() {
