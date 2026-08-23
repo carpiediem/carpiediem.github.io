@@ -95,6 +95,15 @@
     "demo": "https://carpiediem.github.io/maokun-explorer/"
   },
   {
+    "id": "spoiler-maps",
+    "img": "/img/spoiler-maps.png",
+    "title": "Spoiler Maps",
+    "tags": ["web", "maps", "open source"],
+    "featured": false,
+    "github": "https://github.com/carpiediem/spoiler-maps",
+    "demo": "https://carpiediem.github.io/spoiler-maps/"
+  },
+  {
     "id": "gameofthrones",
     "img": "/img/quartermaester.png",
     "title": "Game of Thrones Map with Spoiler Control",
