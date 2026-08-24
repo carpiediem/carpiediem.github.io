@@ -1,7 +1,17 @@
 <p>
-    TBD
+    At <a href="https://thrivemetrics.com/" target="_blank" rel="noopener noreferrer">Shopventory</a>, I worked on a
+    feature that let customers create purchase
+    orders by simply uploading a PDF or JPG of a paper invoice, rather than entering line items by hand. The system used
+    Google Vertex AI to extract structured data from the document - vendor and order metadata, plus a full table of line
+    items with quantities and prices - even when the source document was a scanned or photographed paper invoice rather
+    than a clean digital file. I worked on the frontend experience end-to-end: the upload flow, the review screen where
+    users could correct anything the model got wrong before committing, and the UX around confidence and error states
+    when extraction was incomplete or ambiguous.
 </p>
-
 <p>
-    TBD
+    Once the model produced structured line items, our backend matched each one against existing product data, so a
+    purchase order could be generated with products already linked rather than requiring manual reconciliation
+    afterward. The result took a task that used to mean manually retyping an entire invoice and
+    turned it into a review-and-confirm workflow - a meaningful time savings for customers, and a good example of AI
+    being useful specifically because the UI around it made the model's output trustworthy and easy to correct.
 </p>
