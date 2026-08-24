@@ -1,13 +1,16 @@
 <p>
-    At Shopventory, our product management UI was originally a single table designed for small customers - a handful of
-    variants across one or two locations. As we won larger customers, that design started to strain under the added
-    complexity: some accounts had grown to 60 variants across a hundred locations, generating far more data than a flat
-    table could present clearly.
+  At Shopventory, our product management UI was originally a single table
+  designed for small customers - a handful of variants across one or two
+  locations. As we won larger customers, that design started to strain under the
+  added complexity: some accounts had grown to 60 variants across a hundred
+  locations, generating far more data than a flat table could present clearly.
 </p>
 <p>
-    I led a redesign that separated "product" from "location-specific inventory" into distinct views instead of one flat
-    table. That restructuring solved the usability problem and unlocked significant performance gains, since we no
-    longer needed to render every variant-location combination together in a single view. It also opened the door to new
-    capabilities: search and filtering became meaningfully more powerful, and the reduced data footprint per request
-    eliminated the timeouts our largest accounts had been experiencing.
+  I led a redesign that separated "product" from "location-specific inventory"
+  into distinct views instead of one flat table. That restructuring solved the
+  usability problem and unlocked significant performance gains, since we no
+  longer needed to render every variant-location combination together in a
+  single view. It also opened the door to new capabilities: search and filtering
+  became meaningfully more powerful, and the reduced data footprint per request
+  eliminated the timeouts our largest accounts had been experiencing.
 </p>
