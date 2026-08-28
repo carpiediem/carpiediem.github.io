@@ -1,5 +1,56 @@
 [
   {
+    "id": "thrive-po-import",
+    "img": "/img/thrive-po-import.png",
+    "title": "Thrive Invoice Imports",
+    "tags": ["web", "work"],
+    "featured": false,
+    "demo": "https://help.thrivemetrics.com/en/articles/14858131-creating-products-with-variants-or-attributes-using-the-ai-po-tool"
+  },
+  {
+    "id": "spoiler-maps",
+    "img": "/img/spoiler-maps.png",
+    "title": "Spoiler Maps",
+    "tags": ["web", "maps", "open source"],
+    "featured": false,
+    "github": "https://github.com/carpiediem/spoiler-maps",
+    "demo": "https://carpiediem.github.io/spoiler-maps/"
+  },
+  {
+    "id": "thrive-bins",
+    "img": "/img/thrive-bins.png",
+    "title": "Thrive Catalog Revamp",
+    "tags": ["web", "work"],
+    "featured": false,
+    "demo": "https://help.thrivemetrics.com/en/articles/13131024-bins-view"
+  },
+  {
+    "id": "splitmaster",
+    "img": "/img/splitmaster.png",
+    "title": "Splitmaster",
+    "tags": ["React Native", "swimming"],
+    "featured": false,
+    "private-github": "https://github.com/carpiediem/Splitmaster",
+    "demo": "https://play.google.com/apps/internaltest/4700349460430956357"
+  },
+  {
+    "id": "overlay",
+    "img": "/img/overlay.png",
+    "title": "Overlay",
+    "tags": ["React Native", "maps"],
+    "featured": false,
+    "private-github": "https://github.com/carpiediem/Overlay",
+    "demo_tbd": "https://play.google.com/apps/internaltest/TBD"
+  },
+  {
+    "id": "rubiks-cube-guide",
+    "img": "/img/rubiks-cube-guide.png",
+    "title": "Rubik's Cube Solution Guide",
+    "tags": ["education", "games"],
+    "featured": false,
+    "demo": "https://docs.google.com/presentation/d/e/2PACX-1vSOdJ8v-8Xkez10Y7I8YPF-Hz85sU1eaRc6P93_IzzpbXxwsTof-OpbkeEBH1B0E34m8e8Y6C7uADMf/pub?start=false&loop=false&delayms=3000"
+  },
+  {
     "id": "easyship-portals",
     "img": "https://cdn.prod.website-files.com/660e658d0cfb31720d8934d0/670946ae5ffb5b512a8dc806_66bb7ae219dbacdbc6ff6cab_2021_Blog_Feature_Launch_Collect--1-.webp",
     "title": "Easyship Buyer-Facing Portals",
@@ -73,7 +124,7 @@
     "id": "kellettswimschool",
     "img": "/img/kellettswimschool.jpg",
     "title": "Coaching Resources for Swim School",
-    "tags": ["web"],
+    "tags": ["web", "swimming"],
     "featured": false
   },
   {
