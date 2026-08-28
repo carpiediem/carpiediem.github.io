@@ -101,7 +101,7 @@ export function metaFor(url: string): Meta {
   if (!project) {
     return {
       title: PERSON_NAME,
-      description: "Personal web site of Ryan SL Carpenter",
+      description: "Personal website of Ryan SL Carpenter",
       canonical,
       image: absoluteUrl("/img/ryan.jpg"),
       type: "website",
