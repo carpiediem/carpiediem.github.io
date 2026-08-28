@@ -3,19 +3,28 @@ var e=`<p class="long">
   that others have built to make government more transparent to its people. The
   Sunlight Foundation has a great (but retired) mobile app named, simply, "<a
     target="_blank"
+    rel="noopener noreferrer"
     href="https://web.archive.org/web/20160414012503/http://congress.sunlightfoundation.com/"
     >Congress</a
   >."
-  <a target="_blank" href="https://www.govtrack.us/congress/votes">GovTrack</a>
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://www.govtrack.us/congress/votes"
+    >GovTrack</a
+  >
   and the
-  <a target="_blank" href="http://projects.washingtonpost.com/congress/"
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="http://projects.washingtonpost.com/congress/"
     >Washington Post</a
   >
   provide a similar service on the web.
 </p>
 <p class="long">
   I found that the Hong Kong government provides lots of data through its Open
-  LegCo program, but there does not seem to be tools available to easily parse
+  LegCo program, but there do not seem to be tools available to easily parse
   voting records and floor speeches to make them actionable. MyLegCo is an
   attempt to change that.
 </p>
@@ -29,7 +38,7 @@ var e=`<p class="long">
 <p class="long">
   In future releases, bills, motions, and speeches will be searchable by topic
   and filterable by date or member. Users will be able to save motions, bills,
-  or committees for later reference. Notifications would be configured to alert
+  or committees for later reference. Notifications will be configured to alert
   users when topics they care about are being discussed.
 </p>
 `;export{e as default};

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://carpiediem.github.io/</loc></url>
+  <url><loc>https://carpiediem.github.io/projects/thrive-po-import</loc></url>
+  <url><loc>https://carpiediem.github.io/projects/spoiler-maps</loc></url>
+  <url><loc>https://carpiediem.github.io/projects/thrive-bins</loc></url>
+  <url><loc>https://carpiediem.github.io/projects/splitmaster</loc></url>
+  <url><loc>https://carpiediem.github.io/projects/overlay</loc></url>
+  <url><loc>https://carpiediem.github.io/projects/rubiks-cube-guide</loc></url>
   <url><loc>https://carpiediem.github.io/projects/easyship-portals</loc></url>
   <url><loc>https://carpiediem.github.io/projects/easyship-widget</loc></url>
   <url><loc>https://carpiediem.github.io/projects/wordleb0t</loc></url>

@@ -3,6 +3,7 @@ var e=`<p>
   <a
     href="https://swim.connect.kellettschool.com/kellett-swim-school"
     target="_blank"
+    rel="noopener noreferrer"
     >Kellett School</a
   >, my wife created hours of video content and dozens of instruction sets for
   different swimming drills. These went into great detail, to support and build

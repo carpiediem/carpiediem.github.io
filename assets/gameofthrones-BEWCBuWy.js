@@ -1,6 +1,7 @@
 var e=`<p class="long">
   The novel series by George R.R. Martin, "<a
     target="_blank"
+    rel="noopener noreferrer"
     href="http://www.georgerrmartin.com/bibliography.html"
     >A Song of Ice and Fire</a
   >" covers a massive world and dozens of characters. As I was reading the
@@ -9,17 +10,25 @@ var e=`<p class="long">
   pages, but I knew there should be an easier way.
 </p>
 <p class="long">
-  There were several maps available on the Internet, but all static images.
-  <a target="_blank" href="http://www.sermountaingoat.co.uk/map">One</a> was
-  large enough to be a good option for a new feature in the Google Maps API
+  There were several maps available on the Internet, but all of them were static
+  images.
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="http://www.sermountaingoat.co.uk/map"
+    >One</a
+  >
+  was large enough to be a good option for a new feature in the Google Maps API
   custom tiles using
   <a
     target="_blank"
+    rel="noopener noreferrer"
     href="https://developers.google.com/maps/documentation/javascript/maptypes#ImageMapTypes"
     >ImageMapType</a
   >. I
   <a
     target="_blank"
+    rel="noopener noreferrer"
     href="http://www.bartlett.ucl.ac.uk/casa/latest/software/gmap-image-cutter"
     >cut</a
   >
@@ -34,10 +43,15 @@ var e=`<p class="long">
 <p class="long">
   The slider in the top-right of the website lets the user select how much of
   the books they have read (or how much of the
-  <a target="_blank" href="http://www.hbo.com/game-of-thrones">TV show</a> they
-  have seen). As the slider is moved, the character paths are updated so that
-  the user sees what has already happened, but is protected from plot details
-  they have not yet reached.
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="http://www.hbo.com/game-of-thrones"
+    >TV show</a
+  >
+  they have seen). As the slider is moved, the character paths are updated so
+  that the user sees what has already happened, but is protected from plot
+  details they have not yet reached.
 </p>
 <p class="long">
   After a 2014 feature in The Guardian, the site went viral, reaching more than
@@ -50,11 +64,13 @@ var e=`<p class="long">
     Google Maps Mania -
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://googlemapsmania.blogspot.hk/2012/12/a-game-of-thrones-on-google-maps.html"
       >2012</a
     >,
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://googlemapsmania.blogspot.hk/2014/04/a-game-of-thrones-mapped.html"
       >2014</a
     >
@@ -63,26 +79,31 @@ var e=`<p class="long">
     Reddit.com -
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.reddit.com/r/asoiaf/comments/14w7my/spoilers_all_a_map_that_only_shows_the_spoilers/"
       >2012</a
     >,
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.reddit.com/r/gameofthrones/comments/1fejbk/spoilers_season_13_daenerys_journey/"
       >2013</a
     >,
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.reddit.com/r/books/comments/239nx0/just_found_this_interactive_map_that_shows_the/"
       >2014</a
     >,
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.reddit.com/r/asoiaf/comments/3cpw69/no_spoilers_just_started_reading_the_books_any/"
       >2015</a
     >,
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.reddit.com/r/InternetIsBeautiful/comments/4r94cr/game_of_thrones_map/"
       >2016</a
     >
@@ -90,6 +111,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://lossietereinos.com/mapa-interactivo-de-los-viajes-de-cada-uno-de-los-personajes/"
       >Los Siete Reinos (Spanish) - January 15, 2013</a
     >
@@ -97,6 +119,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://joemonster.org/link/45791/Interaktywna_mapa_z_Gry_o_Tron"
       >JoeMonster.org (Polish) - April 17, 2013</a
     >
@@ -104,18 +127,23 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.techgear.gr/interactive-game-of-thrones-map-70672/"
       >Tech Gear (Greek) - June 8, 2013</a
     >
   </li>
   <li>
-    <a target="_blank" href="http://www.kp.ru/daily/26219/3103386/"
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="http://www.kp.ru/daily/26219/3103386/"
       >Komsomolskaya Pravda (Russian) - April 15, 2014</a
     >
   </li>
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.theguardian.com/tv-and-radio/tvandradioblog/2014/apr/15/game-of-thrones-interactive-map-google"
       >The Guardian - April 15, 2014</a
     >
@@ -123,6 +151,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.avclub.com/article/interactive-game-thrones-map-has-everything-203658"
       >The Onion AV Club - April 21, 2014</a
     >
@@ -130,6 +159,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.cnet.com/news/google-maps-meets-game-of-thrones-in-interactive-westeros-map/"
       >CNET.com - April 21, 2014</a
     >
@@ -137,6 +167,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://gizmodo.com/explore-the-world-of-game-of-thrones-as-if-it-were-on-g-1565480639"
       >Gizmodo - April 21, 2014</a
     >
@@ -144,6 +175,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.tomsguide.fr/actualite/carte-game-of-thrones,41151.html"
       >Tom's Guide (French) - April 22, 2014</a
     >
@@ -151,6 +183,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.elconfidencial.com/tecnologia/2014-04-22/este-mapa-interactivo-permite-recorrer-el-mundo-de-juego-de-tronos_119215/"
       >El Confidencial (Spanish) - April 22, 2014</a
     >
@@ -158,18 +191,23 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.news.com.au/technology/fans-build-game-of-thrones-world-on-google-maps/story-e6frfrnr-1226892475343"
       >News.com.au - April 22, 2014</a
     >
   </li>
   <li>
-    <a target="_blank" href="http://www.haaretz.co.il/captain/net/1.2301517"
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="http://www.haaretz.co.il/captain/net/1.2301517"
       >Haaretz (Hebrew) - April 22, 2014</a
     >
   </li>
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://geekologie.com/2014/04/impressive-game-of-thrones-interactive-m.php"
       >Geekologie - April 22, 2014</a
     >
@@ -177,6 +215,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://tn.com.ar/tecno/recomendados/un-mapa-interactivo-para-recorrer-el-mundo-de-game-of-thrones_493769"
       >TN - April 22, 2014</a
     >
@@ -184,6 +223,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://nerdist.com/this-fan-made-interactive-game-of-thrones-map-is-super-helpful-awesome/"
       >Nerdist - April 22, 2014</a
     >
@@ -191,6 +231,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.slate.fr/life/86289/carte-interactive-game-of-thrones-localisation-parcours-personnages"
       >Slate.fr (French) - April 23, 2014</a
     >
@@ -198,6 +239,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.people.com/article/game-of-thrones-westeros-interactive-map"
       >People - April 23, 2014</a
     >
@@ -205,6 +247,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.maxim.cz/mixer/film/skvele-uz-jste-videli-interaktivni-mapu-hry-o-truny"
       >Maxim (Czech) - April 23, 2014</a
     >
@@ -212,6 +255,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://blogs.marketwatch.com/themargin/2014/04/23/game-of-thrones-meets-google-in-interactive-map-of-westeros/"
       >MarketWatch: The Margin - April 23, 2014</a
     >
@@ -219,6 +263,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.dailymail.co.uk/sciencetech/article-2611168/Google-Game-Thrones-View-Interactive-map-reveals-fantasy-world-unprecedented-helps-avoid-spoilers.html"
       >The Daily Mail - April 23, 2014</a
     >
@@ -227,11 +272,13 @@ var e=`<p class="long">
     Buzzfeed -
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.buzzfeed.com/josephbernstein/finally-the-interactive-map-game-of-thrones-deserves"
       >2014</a
     >,
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.buzzfeed.com/clairedelouraille/where-in-the-world-is-arya-stark"
       >2015</a
     >
@@ -241,6 +288,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://olhardigital.uol.com.br/noticia/game-of-thrones-ganha-mapa-no-estilo-google-maps/41602"
       >Olhar Digital (Portuguese) - April 24, 2014</a
     >
@@ -248,6 +296,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.escapistmagazine.com/news/view/133945-Track-Game-of-Thrones-Characters-Paths-with-this-Interactive-Map"
       >The Escapist - April 24, 2014</a
     >
@@ -255,6 +304,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.gameofthronesbr.com/2014/04/mapa-interativo-de-game-of-thrones.html"
       >Game of Thrones BR (Portuguese) - April 29, 2014</a
     >
@@ -262,6 +312,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.internazionale.it/opinione/2014/04/30/la-mappa-di-game-of-thrones"
       >Internazionale (Italian) - April 30, 2014</a
     >
@@ -269,6 +320,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.dnaindia.com/entertainment/report-game-of-thrones-interactive-map-allows-you-to-explore-the-seven-kingdoms-1984730"
       >DNA India - May 3, 2014</a
     >
@@ -276,6 +328,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://derstandard.at/1397521436850/Interaktive-Google-Map-fuer-Game-of-Thrones"
       >der Standard (German) - May 4, 2014</a
     >
@@ -283,6 +336,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.focus.de/kultur/kino_tv/game-of-thrones-george-r-r-martin-westeros-hbo-sky-interaktive-karte-zeigt-die-welt-von-game-of-thrones_id_3819866.html"
       >Focus (German) - May 5, 2014</a
     >
@@ -290,6 +344,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.esquire.com/entertainment/tv/news/a43936/game-of-thrones-360-intro-video/"
       >Esquire - April 14, 2016</a
     >
@@ -297,6 +352,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.theverge.com/2016/6/28/12047644/game-of-thrones-maps-season-six-travel-plot-holes-time-warps"
       >The Verge - June 28, 2016</a
     >
@@ -304,6 +360,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://lifehacker.com/get-your-game-of-thrones-fix-with-this-interactive-spo-1782986360"
       >Lifehacker - July 3, 2016</a
     >
@@ -311,6 +368,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://thenextweb.com/shareables/2016/07/04/discover-game-thrones-universe-handy-interactive-map/"
       >The Next Web - July 4, 2016</a
     >
@@ -318,6 +376,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.polygon.com/2016/7/4/12093570/game-of-thrones-map-westeros"
       >Polygon - July 4, 2016</a
     >
@@ -325,6 +384,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.wired.it/internet/web/2016/07/05/mappa-interattiva-game-of-thrones/"
       >Wired (Italian) - July 5, 2016</a
     >
@@ -332,6 +392,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://boingboing.net/2016/07/05/interactive-map-of-game-of-thr.html"
       >BoingBoing.net - July 5, 2016</a
     >
@@ -339,6 +400,7 @@ var e=`<p class="long">
   <li>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="http://www.origo.hu/teve/20140422-parades-interaktiv-terkep-a-tronok-harcahoz.html"
       >Origo (Hungarian) - July 18, 2016</a
     >

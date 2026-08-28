@@ -1,7 +1,7 @@
 var e=`<p>
   In Hong Kong, buildings are replaced at such a rapid rate that history seems
   to be swept away with every new construction site. Still, the roads between
-  the buildings still carry a long heritage from its colonial past.
+  the buildings still carry a long heritage from their colonial past.
 </p>
 <p>
   This map is a compilation of every street in the Hong Kong SAR named after a

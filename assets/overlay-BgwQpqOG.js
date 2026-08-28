@@ -1,0 +1,28 @@
+var e=`<p>
+  Overlay is a mobile app that puts paper maps in context and helps you locate
+  yourself inside each one.
+</p>
+<p>
+  It's built with
+  <a href="https://expo.dev" target="_blank" rel="noopener noreferrer">Expo</a>
+  and
+  <a
+    href="https://github.com/rnmapbox/maps"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Mapbox GL via @rnmapbox/maps</a
+  >, using
+  <a
+    href="https://docs.expo.dev/versions/latest/sdk/location/"
+    target="_blank"
+    rel="noopener noreferrer"
+    >expo-location</a
+  >
+  for permissions and positioning. The app is backed by a
+  <a href="https://fastify.dev/" target="_blank" rel="noopener noreferrer"
+    >Fastify</a
+  >
+  API on Cloud Run, with infrastructure (Cloud Run, Cloud SQL, Storage, Artifact
+  Registry) provisioned via Terraform.
+</p>
+`;export{e as default};

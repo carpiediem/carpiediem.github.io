@@ -10,7 +10,7 @@ var e=`<p>
   <a
     href="https://shopify.dev/api/liquid"
     target="_blank"
-    rel="noopener nofollow"
+    rel="noopener nofollow noreferrer"
     >Liquid</a
   >
   snippet that could be automatically added to the custom theme of our

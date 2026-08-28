@@ -1,19 +1,24 @@
 var e=`<h2>Time-Scaled Maps</h2>
 <p>
   I was intrigued by the time-scaled diagrams of
-  <a href="http://www.stonebrowndesign.com/boston-t-time.html" target="_blank"
+  <a
+    href="http://www.stonebrowndesign.com/boston-t-time.html"
+    target="_blank"
+    rel="noopener noreferrer"
     >Boston's</a
   >
   &amp;
   <a
     href="http://www.stonebrowndesign.com/time-scale-metro-map.html"
     target="_blank"
+    rel="noopener noreferrer"
     >DC's</a
   >
   subway lines and
   <a
     href="http://www.stonebrowndesign.com/boston-t-time-commuter-rail.html"
     target="_blank"
+    rel="noopener noreferrer"
     >commuter rail</a
   >
   created by Peter Dunn of Stone Brown Design and thought that something similar
@@ -23,17 +28,23 @@ var e=`<h2>Time-Scaled Maps</h2>
   Hong Kong does not have the same hub and spoke layout as Boston, so I chose
   Central station for the "starting point" (though a map centered on Admiralty,
   Mongkok, or Hung Hom would be an interesting follow-up).
-  <a href="/downloads/time-scaled-mtr-map-polar.png" target="_blank"
+  <a
+    href="/downloads/time-scaled-mtr-map-polar.png"
+    target="_blank"
+    rel="noopener noreferrer"
     >My first draft</a
   >
   attempted to display train frequency information, as well as trip duration,
   though I am not certain that I handled the transfer stations in a logical way.
-  For instance, Yau Ma Tei has twice as many trains pass through it as Jordan,
-  but does that actually mean the station is twice as busy?
+  For instance, Yau Ma Tei has twice as many trains passing through it as
+  Jordan, but does that actually mean the station is twice as busy?
 </p>
 <p>
   In
-  <a href="timescaledmap/time-scaled-mtr-map-vertical.png" target="_blank"
+  <a
+    href="timescaledmap/time-scaled-mtr-map-vertical.png"
+    target="_blank"
+    rel="noopener noreferrer"
     >a later version</a
   >, I set the "start time" at the top of the page and drew parallel streams
   downward to every possible destination. This allowed me to more clearly show
@@ -46,12 +57,14 @@ var e=`<h2>Time-Scaled Maps</h2>
   <a
     href="http://transitmap.net/post/133579339455/lopato-bart-time-scale"
     target="_blank"
+    rel="noopener noreferrer"
     >The San Francisco Bay Area</a
   >
   &amp;
   <a
     href="https://munsonscity.com/2013/03/18/time-scale-transit-map-of-philadelphia/"
     target="_blank"
+    rel="noopener noreferrer"
     >Philadelphia</a
   >
   as well.

@@ -22,7 +22,7 @@ var e=`<p>
   />
 </a>
 <p>
-  Peter's work made me think that Hong Kong might be good place to implement
+  Peter's work made me think that Hong Kong might be a good place to implement
   spider maps like these. Although commuters may not need to look at a map to
   figure out where they are going, Hong Kong residents often take public
   transportation to reach parts of town that they do not know well. In addition,
@@ -36,19 +36,36 @@ var e=`<p>
   companies [<a
     href="https://nwstbus.com.hk/home/default.aspx?intLangID=1"
     target="_blank"
+    rel="noopener noreferrer"
     >1,2</a
-  >,<a href="http://www.kmb.hk/en/" target="_blank">3</a>,<a
-    href="http://www.lwb.hk/en/"
-    target="_blank"
+  >,<a href="http://www.kmb.hk/en/" target="_blank" rel="noopener noreferrer"
+    >3</a
+  >,<a href="http://www.lwb.hk/en/" target="_blank" rel="noopener noreferrer"
     >4</a
-  >,<a href="http://www.newlantaobus.com/main.html" target="_blank">5</a>]
-  operating full-sized buses and both
-  <a href="http://16seats.net/chi/rmb/rmb.html" target="_blank">red</a> and
-  <a href="http://16seats.net/eng/gmb/gmb.html" target="_blank">green</a>
+  >,<a
+    href="http://www.newlantaobus.com/main.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    >5</a
+  >] operating full-sized buses and both
+  <a
+    href="http://16seats.net/chi/rmb/rmb.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    >red</a
+  >
+  and
+  <a
+    href="http://16seats.net/eng/gmb/gmb.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    >green</a
+  >
   minibuses added to the mix. The map that Peter Dunn made benefited from the
   <a
     href="http://vizual-statistix.tumblr.com/post/80468941142/unlike-like-emperor-kuzco-i-was-actually-born"
     target="_blank"
+    rel="noopener noreferrer"
     >very straight</a
   >
   streets of Washington, DC; unfortunately, Hong Kong has a maze of curvy roads
@@ -70,6 +87,7 @@ var e=`<p>
     <a
       href="http://www.mtr.com.hk/eng/getting_around/system_map.html"
       target="_blank"
+      rel="noopener noreferrer"
       >MTR System Map</a
     >
     (for showing which lines to follow to another station)
@@ -78,12 +96,16 @@ var e=`<p>
     <a
       href="http://www.mtr.com.hk/jplanner/images/layouts/adm.pdf"
       target="_blank"
+      rel="noopener noreferrer"
       >Station Layout</a
     >
     (for showing how to find shops and services within an individual station)
   </li>
   <li>
-    <a href="http://www.mtr.com.hk/jplanner/images/maps/adm.pdf" target="_blank"
+    <a
+      href="http://www.mtr.com.hk/jplanner/images/maps/adm.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
       >Street/Location Map</a
     >
     (for choosing the right exit if you are walking nearby)
@@ -92,6 +114,7 @@ var e=`<p>
     <a
       href="https://en.wikipedia.org/wiki/Spider_map"
       target="_blank"
+      rel="noopener noreferrer"
       style="font-weight: bold"
       >Spider Map/Bus Route Diagram</a
     >
@@ -105,10 +128,18 @@ var e=`<p>
   like to see more, consider asking the MTR [<a
     href="https://www.mtr.com.hk/eng/hotline/OnlineFeedback.php"
     target="_blank"
+    rel="noopener noreferrer"
     >web form</a
-  >, <a href="https://www.facebook.com/mtrhk" target="_blank">Facebook</a>] or
-  the
-  <a href="mailto:tdenq@td.gov.hk" target="_blank">Transport Department</a> to
-  study the idea.
+  >,
+  <a
+    href="https://www.facebook.com/mtrhk"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Facebook</a
+  >] or the
+  <a href="mailto:tdenq@td.gov.hk" target="_blank" rel="noopener noreferrer"
+    >Transport Department</a
+  >
+  to study the idea.
 </p>
 `;export{e as default};
