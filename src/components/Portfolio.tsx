@@ -10,7 +10,6 @@ import ZoomIcon from "@mui/icons-material/ZoomIn";
 import LinkIcon from "@mui/icons-material/Link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-// import Skill from './Skill';
 import projectsData from "../content/projects.json";
 import type { ProjectSummary } from "../content/types";
 
