@@ -12,19 +12,25 @@
     rel="noopener noreferrer"
     >Game of Thrones map</a
   >
-  I built back in 2013, which went viral but became brittle to
-  maintain&mdash;every update meant hand-editing a pile of JSON. Spoiler Maps
-  generalizes that idea into a real editor: stories are stored in a browser-side
-  SQLite database (via
+  I built in 2013, which went
+  <a
+    href="https://www.theguardian.com/tv-and-radio/tvandradioblog/2014/apr/15/game-of-thrones-interactive-map-google"
+    target="_blank"
+    rel="noopener noreferrer"
+    >a bit viral</a
+  >
+  but became tedious to maintain&mdash;every update meant hand-editing a pile of
+  JSON. Spoiler Maps generalizes that idea into a real editor. Stories are
+  stored in a browser-side SQLite database (via
   <a href="https://sql.js.org/" target="_blank" rel="noopener noreferrer"
     >sql.js</a
   >
   and IndexedDB) and can be exported to or imported from a human-editable YAML
-  file, so anyone can build and share a spoiler-safe map for their own favorite
-  story.
+  file. This lets anyone build and share a spoiler-safe map for their own
+  favorite story.
 </p>
 <p>
-  Built with
+  The map was built with
   <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a
   >, TypeScript, and
   <a
@@ -32,8 +38,6 @@
     target="_blank"
     rel="noopener noreferrer"
     >react-leaflet</a
-  >
-  for the map itself, with a full CI pipeline&mdash;type-checking, linting,
-  tests with coverage, CodeQL scanning, and an automated accessibility scan of
-  the deployed site.
+  >, with a full CI pipeline: type-checking, linting, tests with coverage,
+  CodeQL scanning, and an automated accessibility scan of the deployed site.
 </p>
