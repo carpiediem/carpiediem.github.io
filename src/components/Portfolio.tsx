@@ -41,6 +41,10 @@ const Root = styled("section")(({ theme }) => ({
     overflowY: "hidden",
   },
   "& .tile": {
+    overflow: "hidden",
+    "& img": {
+      minHeight: 0,
+    },
     "& .MuiImageListItemBar-titleWrap": {
       marginTop: 175,
       transition: "all 0.25s ease-out",
@@ -106,9 +110,6 @@ const Portfolio = forwardRef<HTMLElement>((_props, ref) => {
             cols={tile.featured ? 2 : 1}
             rows={tile.featured ? 2 : 1}
             className="tile"
-            // component={Link}
-            // to={`/projects/${tile.id}`}
-            // onClick={scrollUp}
           >
             <img src={tile.img} alt={tile.title} />
             <ImageListItemBar
