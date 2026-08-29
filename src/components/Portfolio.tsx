@@ -65,6 +65,12 @@ const Root = styled("section")(({ theme }) => ({
       fontSize: 18,
       fontWeight: 600,
       textTransform: "uppercase",
+
+      whiteSpace: "normal",
+      overflow: "hidden",
+      display: "-webkit-box",
+      "-webkit-box-orient": "vertical",
+      "-webkit-line-clamp": "2",
     },
     "& div.tags span": {
       color: "rgba(255, 255, 255, 0.5)",
@@ -73,10 +79,15 @@ const Root = styled("section")(({ theme }) => ({
     "& div.actions": {
       marginTop: 20,
       "& a.MuiButton-root": {
-        padding: 10,
         margin: "0 5px",
         color: theme.palette.primary.light,
         borderColor: "white",
+        padding: "5px",
+        minWidth: 0,
+        [theme.breakpoints.up("sm")]: {
+          padding: "10px",
+          minWidth: 8,
+        },
         "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.25)" },
         "& svg": { fontSize: "1.8rem" },
       },

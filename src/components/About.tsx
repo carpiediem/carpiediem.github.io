@@ -80,6 +80,14 @@ const Root = styled("div")(({ theme }) => ({
     "& a": { outline: "none" },
   },
   "& .list": {
+    "& .MuiListItemText-primary": {
+      textAlign: "center",
+      [theme.breakpoints.up("sm")]: { textAlign: "left" },
+    },
+    "& .MuiListItemText-secondary": {
+      textAlign: "center",
+      [theme.breakpoints.up("sm")]: { textAlign: "left" },
+    },
     "& li": {
       padding: "4px 0",
       "& span.MuiListItemText-primary": {
@@ -139,7 +147,11 @@ const About = forwardRef<HTMLElement>((_props, ref) => {
       >
         <Card className="card" variant="outlined">
           <CardContent className="content">
-            <Grid container spacing={3}>
+            <Grid
+              container
+              spacing={3}
+              sx={{ justifyContent: { xs: "center", sm: "start" } }}
+            >
               <Grid size={{ sm: 5 }} className="item">
                 <a id="about" href="#about">
                   <img

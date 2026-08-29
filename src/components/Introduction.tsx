@@ -2,9 +2,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-// import SpeechBubble from './SpeechBubble';
-
-const Root = styled("div")({
+const Root = styled("div")(({ theme }) => ({
   paddingBottom: 15,
   borderBottom: "thin solid #ddd",
   textAlign: "left",
@@ -13,13 +11,18 @@ const Root = styled("div")({
   },
   "& .name": {
     fontWeight: 700,
+    textAlign: "center",
+    [theme.breakpoints.up("sm")]: { textAlign: "left" },
     "& > span.thin": { fontWeight: 300 },
   },
-  "& .role": { fontWeight: 400 },
-});
+  "& .role": {
+    fontWeight: 400,
+    textAlign: "center",
+    [theme.breakpoints.up("sm")]: { textAlign: "left" },
+  },
+}));
 
 interface IntroductionProps {
-  // bubble?: React.ReactNode;
   name?: React.ReactNode;
   role?: React.ReactNode;
 }
@@ -30,7 +33,6 @@ export default function Introduction({
 }: IntroductionProps) {
   return (
     <Root>
-      {/* <SpeechBubble text={bubble} /> */}
       <Typography
         variant="h4"
         component="h1"
@@ -39,7 +41,11 @@ export default function Introduction({
       >
         {name}
       </Typography>
-      <Typography variant="h6" component="h2" className="role">
+      <Typography
+        variant="h6"
+        component="h2"
+        className="role"
+      >
         {role}
       </Typography>
     </Root>
