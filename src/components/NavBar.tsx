@@ -5,9 +5,9 @@ import Toolbar from "@mui/material/Toolbar";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import AboutIcon from "@mui/icons-material/Help";
-import SkillsIcon from "@mui/icons-material/Star";
-import PortfolioIcon from "@mui/icons-material/PhotoLibrary";
+import AboutIcon from "@mui/icons-material/Person";
+import SkillsIcon from "@mui/icons-material/Build";
+import PortfolioIcon from "@mui/icons-material/Dashboard";
 import ExperienceIcon from "@mui/icons-material/Work";
 import EducationIcon from "@mui/icons-material/School";
 
