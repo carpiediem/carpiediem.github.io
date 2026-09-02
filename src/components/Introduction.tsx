@@ -41,11 +41,7 @@ export default function Introduction({
       >
         {name}
       </Typography>
-      <Typography
-        variant="h6"
-        component="h2"
-        className="role"
-      >
+      <Typography variant="h6" component="h2" className="role">
         {role}
       </Typography>
     </Root>
